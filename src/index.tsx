@@ -3,7 +3,9 @@ import ReactDOM from "react-dom"
 import React from "react"
 import * as serviceWorker from './serviceWorker'
 // Components
-import { App } from "./App";
+import { App } from "./App"
+// Style Ant Design
+import 'antd/dist/antd.css'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

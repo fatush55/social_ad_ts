@@ -10,6 +10,7 @@ const initialState = {
     currentProfile: null as null | number,
     alert: null as null | AlertType,
     hiddenAlert: null as HiddenAlertType,
+    navbarMode: false as boolean,
 }
 
 type InitialStateType = typeof initialState
@@ -36,6 +37,11 @@ export const appReducer = (state: InitialStateType = initialState, action: Actio
             return {
                 ...state,
                 hiddenAlert: action.payload,
+            }
+        case "APP/SET_NAVBAR_MODE":
+            return {
+                ...state,
+                navbarMode: action.payload,
             }
         default: return state
     }

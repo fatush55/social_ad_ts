@@ -31,3 +31,7 @@ export const setCurrentProfile = (id: number): ThunkCreatorType => (dispatch) =>
 export const setHiddenAlert = (action: HiddenAlertType): ThunkCreatorType =>(dispatch) => {
     dispatch(actionsApp.setHiddenAlert(action))
 }
+
+export const setNavbarMode = (mode: boolean): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsApp.setNavbarMode(mode))
+}

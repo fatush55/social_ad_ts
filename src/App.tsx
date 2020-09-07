@@ -1,84 +1,70 @@
 // Root
-import React, { useEffect, useLayoutEffect, FC, useCallback } from "react"
-import { BrowserRouter as Router } from "react-router-dom"
-import { Routes } from "./Routes"
-import { connect, Provider } from "react-redux"
-import { compose } from "redux"
+import React, {FC, useCallback, useEffect, useLayoutEffect, useState} from "react"
+import {BrowserRouter as Router} from "react-router-dom"
+import {Routes} from "./Routes"
+import {Provider, useDispatch, useSelector} from "react-redux"
+import {store} from "./store"
+// Ant Design
+import {Layout, Menu} from 'antd'
+// import {} from '@ant-design/icons'
 // Reducer
-import { setInitialize, cycleAlert } from "./thunks/app-thunk"
+import {cycleAlert, setInitialize, setNavbarMode} from "./thunks/app-thunk"
 // Selector
-import { getInitialize } from "./selectors/app-selector"
-// Style
-import style from "./App.module.css"
+import {getInitialize, getNavbarMode} from "./selectors/app-selector"
 // Components
-import { HeaderContainer } from "./components/header/HeaderContainer"
-import { InitializeLoading } from "./components/initializeLoding/InitializeLoading"
-import { NavBarContainer } from "./components/navbar/NavBarContainer"
-import { AlertContainer } from "./components/alert/AlertContainer"
+import {NavbarLeft} from "./components/navbar-left/NavbarLeft"
+import { NavbarTop } from "./components/navbar-top/NavbarTop"
 // Type
-import {RootState, store} from "./store"
-import { AlertType } from "./types/app-reducet-type"
 
 
-type StateToPopsType = {
-    initialize: boolean
-}
+const AppContainer: FC = (props) => {
+    const {Header, Footer, Content, Sider} = Layout
+    const dispatch = useDispatch()
+    const initialize = useSelector(getInitialize)
+    const mode = useSelector(getNavbarMode)
 
-type DispatchToPopsType = {
-    setInitialize: () => void
-    cycleAlert: (message: AlertType) => void
-}
-
-const  AppContainer: FC<StateToPopsType & DispatchToPopsType> = ({setInitialize, initialize, cycleAlert}) => {
     const catchAllUnHandlerErrors = useCallback ( () => (promiseRejectedEvent: {reason: any}): void => {
-        cycleAlert({message: promiseRejectedEvent.reason.message, type: "error"})
-    }, [cycleAlert])
+        dispatch(cycleAlert({message: promiseRejectedEvent.reason.message, type: "error"}))
+    }, [dispatch])
 
     useLayoutEffect(() => {
         window.removeEventListener('unhandledrejection', catchAllUnHandlerErrors)
     })
 
     useEffect(() => {
-        setInitialize()
+        dispatch(setInitialize())
         window.addEventListener('unhandledrejection', catchAllUnHandlerErrors)
-    }, [setInitialize, catchAllUnHandlerErrors])
+    }, [catchAllUnHandlerErrors, dispatch])
 
     return (
-        <div className={style.root}>
-        {
-            initialize
-            ? <>
-                <Router>
-                    <NavBarContainer/>
-                    <div className={style.contentContainer}>
-                        <HeaderContainer/>
-                        <AlertContainer/>
-                        <Routes/>
-                    </div>
-                </Router>
-            </>
-            : <InitializeLoading/>
-        }
-        </div>
+      <Layout>
+          <Router>
+              <Sider style={{height: '100vh'}} collapsed={mode}>
+                  <NavbarLeft mode={mode} />
+              </Sider>
+          <Layout>
+                  <Header>
+                     <NavbarTop />
+                  </Header>
+                  <Content>
+                      {
+                          !initialize
+                              ? <Routes/>
+                              : ''
+                      }
+                  </Content>
+              <Footer>Footer</Footer>
+          </Layout>
+          </Router>
+      </Layout>
     )
 }
 
-const mapStateToProps = (state: RootState): StateToPopsType => ({
-    initialize: getInitialize(state),
-})
-
-const AppWrapper = compose(
-    connect(mapStateToProps, {
-        setInitialize, cycleAlert
-    }),
-)(AppContainer)
-
-
-export const App = () => {
+export const App: FC = () => {
     return (
         <React.StrictMode>
             <Provider store={store}>
-                <AppWrapper />
+                <AppContainer />
             </Provider>
         </React.StrictMode>
     )

@@ -1,18 +1,13 @@
 // Root
 import React, {FC} from "react"
-import {Redirect} from "react-router-dom"
-// Components
-import {LoginForm} from "../../formik/form/login/LoginForm"
-import {useSelector} from "react-redux"
-import {getIsAuth} from "../../selectors/auth-selector"
+// Ant Design
+// import 'antd/dist/antd.css'
+import {} from 'antd'
+import {} from '@ant-design/icons'
 
 
-const LoginContainer: FC = (props) => {
-    const isAuth = useSelector(getIsAuth)
+type PropsType = {}
 
-    if (isAuth) return <Redirect to='/profile' />
-
-    return <LoginForm />
+export const LoginContainer: FC<PropsType> = () => {
+    return <div>LoginContainer</div>
 }
-
-export default LoginContainer
