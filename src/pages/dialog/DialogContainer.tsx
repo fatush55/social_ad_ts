@@ -1,13 +1,18 @@
 // Root
-import React, {FC} from "react"
-// Ant Design
-// import 'antd/dist/antd.css'
-import {} from 'antd'
-import {} from '@ant-design/icons'
+import React, {FC, memo} from "react"
+import {compose} from "redux"
+// HOC
+import {withSuspense} from "../../HOC/withSuspense"
 
 
 type PropsType = {}
 
-export const DialogContainer: FC<PropsType> = () => {
+const DialogWrapper: FC<PropsType> = memo(() => {
     return <div>DialogContainer</div>
-}
+})
+
+const DialogContainer = compose(
+    withSuspense
+)(DialogWrapper)
+
+export default DialogContainer;

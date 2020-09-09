@@ -19,7 +19,7 @@ export const Routes = () => {
         <Switch>
             <Route path='/' render={() => <ProfileContainer />} exact />
             <Route path='/profile/:idUser?' render={() => <ProfileContainer />} />
-            <Route path='/user' render={() => <UserContainer />} />
+            <Route path='/users' render={() => <UserContainer />} />
             <Route path='/dialog/:idUser?' render={() => <Dialog />} />
             <Route path='/login' render={() => <Login />} />
             <Route path='*' render={() => (<div>404</div>)} />

@@ -32,6 +32,6 @@ export const setHiddenAlert = (action: HiddenAlertType): ThunkCreatorType =>(dis
     dispatch(actionsApp.setHiddenAlert(action))
 }
 
-export const setNavbarMode = (mode: boolean): ThunkCreatorType => (dispatch) => {
-    dispatch(actionsApp.setNavbarMode(mode))
+export const setTheme = (theme: boolean): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsApp.setTheme(theme))
 }

@@ -4,8 +4,8 @@ import React from "react"
 import * as serviceWorker from './serviceWorker'
 // Components
 import { App } from "./App"
-// Style Ant Design
-import 'antd/dist/antd.css'
+// Font Roboto
+import 'fontsource-roboto'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
