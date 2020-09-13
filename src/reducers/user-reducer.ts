@@ -8,11 +8,15 @@ import { ActionsCreatorType } from "../store"
 const initialState = {
     users: [] as Array<UsersType>,
     followProgress: [] as Array<number>, // users id
-    currentPage: 1 as number,
-    sizePage: 20 as number,
-    searchUser: {search: '', type: 'all'},
+    searchUser: {
+        string: '',
+        type: 'all' as 'all' | 'follow' | 'other',
+        currentPage: 1 as number,
+        sizePage: 20 as number,
+    },
     totalUsers: null as number | null,
-    isLoading: false as boolean,
+    isLoadingUsers: false as boolean,
+    viewItem: 'module' as 'module' | 'list'
 }
 
 type InitialStateType = typeof initialState
@@ -46,22 +50,44 @@ export const userReducer = (state: InitialStateType = initialState, action: Acti
         case "USER/SET_CURRENCY_PAGE":
             return {
                 ...state,
-                currentPage: action.page,
+                searchUser: {
+                    ...state.searchUser,
+                    currentPage: action.page,
+                }
             }
         case "USER/SET_SIZE_PAGE":
             return {
                 ...state,
-                sizePage: action.size,
+                searchUser: {
+                    ...state.searchUser,
+                    sizePage: action.size,
+                }
             }
-        case "USER/SET_SEARCH_USER":
+        case "USER/SET_SEARCH_STRING_USER":
             return {
                 ...state,
-                searchUser: action.payload,
+                searchUser: {
+                    ...state.searchUser,
+                    string: action.payload.search,
+                }
             }
-        case "USER/TRIGGER_LOADING":
+        case "USER/SET_SEARCH_TYPE_USER":
             return {
                 ...state,
-                isLoading: action.isLoading
+                searchUser: {
+                    ...state.searchUser,
+                    type: action.payload.type,
+                }
+            }
+        case "USER/SET_VIEW_ITEM":
+            return {
+                ...state,
+                viewItem: action.payload,
+            }
+        case "USER/TRIGGER_LOADING_USERS":
+            return {
+                ...state,
+                isLoadingUsers: action.isLoading
             }
         case "USER/TRIGGER_FALLOW_PROGRESS":
             return {

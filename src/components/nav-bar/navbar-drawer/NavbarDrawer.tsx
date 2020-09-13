@@ -2,17 +2,17 @@
 import React, {FC} from "react"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import clsx from "clsx"
-import {useLocation} from "react-router-dom"
 // Mat Components
 import {Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core'
 // Mat Icon
 import {ChevronLeft as ChevronLeftIcon, Inbox as InboxIcon, Mail as MailIcon,} from '@material-ui/icons'
 import {NavbarDrawerLInkItem} from "./NavbarDrawerLInkItem"
+import {useDispatch, useSelector} from "react-redux";
+import {getDrawerMode} from "../../../selectors/app-selector";
+import {setDrawerMode} from "../../../thunks/app-thunk";
 
 
 type PropsType = {
-    handleDrawerClose: () => void
-    editModeDrawer: boolean
 }
 
 const drawerWidth = 220
@@ -57,26 +57,29 @@ const navLinkItems = [
     {to: '/users', title: 'Users'},
 ]
 
-export const NavbarDrawer: FC<PropsType> = ({handleDrawerClose, editModeDrawer}) => {
+export const NavbarDrawer: FC<PropsType> = (props) => {
     const classes = useStyles(drawerWidth)
-    const location = useLocation()
+    const dispatch = useDispatch()
+    const drawerMode = useSelector(getDrawerMode)
+
+    const handleDrawer = () => dispatch(setDrawerMode(false))
 
     return (
         <Drawer
             variant="permanent"
             className={clsx(classes.drawer, {
-                [classes.drawerOpen]: editModeDrawer,
-                [classes.drawerClose]: !editModeDrawer,
+                [classes.drawerOpen]: drawerMode,
+                [classes.drawerClose]: !drawerMode,
             })}
             classes={{
                 paper: clsx({
-                    [classes.drawerOpen]: editModeDrawer,
-                    [classes.drawerClose]: !editModeDrawer,
+                    [classes.drawerOpen]: drawerMode,
+                    [classes.drawerClose]: !drawerMode,
                 }),
             }}
         >
             <div className={classes.toolbar}>
-                <IconButton onClick={handleDrawerClose}>
+                <IconButton onClick={handleDrawer}>
                     <ChevronLeftIcon />
                 </IconButton>
             </div>

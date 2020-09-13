@@ -14,19 +14,17 @@ import {
     NightsStayTwoTone,
 } from '@material-ui/icons'
 // Thunk
-import {setTheme} from "../../thunks/app-thunk"
+import {setDrawerMode, setTheme} from "../../thunks/app-thunk"
 // Selector
-import {getTheme} from "../../selectors/app-selector"
+import {getTheme, getDrawerMode} from "../../selectors/app-selector"
 // Components
-import {NavbarMobileMenu} from "../navbar-mobile-menu/NavbarMobileMenu"
-import {NavbarMenu} from "../navbar-menu/NavbarMenu"
+import {NavbarMobileMenu} from "./NavbarMobileMenu"
+import {NavbarMenu} from "./NavbarMenu"
 import clsx from 'clsx'
 // Color
 
 
 type PropsType = {
-    handleDrawerClose: () => void
-    editModeDrawer: boolean
 }
 
 const drawerWidth = 220
@@ -110,10 +108,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         },
 }))
 
-export const Navbar: FC<PropsType> = ({handleDrawerClose, editModeDrawer}) => {
+export const Navbar: FC<PropsType> = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const theme = useSelector(getTheme)
+    const drawerMode = useSelector(getDrawerMode)
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -124,24 +123,25 @@ export const Navbar: FC<PropsType> = ({handleDrawerClose, editModeDrawer}) => {
     const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget)
     const handleMobileMenuClose = () => setMobileMoreAnchorEl(null)
     const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => setMobileMoreAnchorEl(event.currentTarget)
+    const handleDrawer = () => dispatch(setDrawerMode(true))
 
     return (
         <div className={classes.grow}>
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
-                    [classes.appBarShift]: editModeDrawer,
+                    [classes.appBarShift]: drawerMode,
                 })}
             >
                 <Toolbar>
                     {
-                        !editModeDrawer &&
+                        !drawerMode &&
                             <IconButton
                                 edge="start"
                                 className={classes.menuButton}
                                 color='secondary'
                                 aria-label="open drawer"
-                                onClick={handleDrawerClose}
+                                onClick={handleDrawer}
                             >
                                 <MenuIcon />
                             </IconButton>

@@ -3,11 +3,11 @@ import  {UsersType } from "../types/types"
 
 
 export const userApi = {
-    getUsers(currentPage = 1, sizePage = 20, search = '', typeSearch = 'all') {
+    getUsers(currentPage = 1, sizePage = 20, search = '', type = 'all') {
         const query = search.length ? `&term=${search}` : ''
-        const type = typeSearch === 'all' ? '' : typeSearch === 'follow' ? `&friend=${true}` : `&friend=${false}`
+        const typeQuery = type === 'all' ? '' : type === 'follow' ? `&friend=${true}` : `&friend=${false}`
 
-        return instance.get<ResponseItemApiType<UsersType>>(`users?page=${currentPage}&count=${sizePage}${query}${type}`).then(res => res.data)
+        return instance.get<ResponseItemApiType<UsersType>>(`users?page=${currentPage}&count=${sizePage}${query}${typeQuery}`).then(res => res.data)
     },
     setFollowed(type: 'follow' | 'unFollow', id: number) {
         switch (type) {

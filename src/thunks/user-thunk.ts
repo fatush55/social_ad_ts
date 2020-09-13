@@ -10,12 +10,12 @@ import { ActionReducerType } from "../reducers/user-reducer"
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>
 
-export const requestUsers = (currentPage: number, sizePage: number, search: string = '', typeSearch: string = 'all'): ThunkCreatorType => async (dispatch) => {
-    dispatch(actionsUser.triggerLoading(true))
-    const data = await userApi.getUsers(currentPage, sizePage, search, typeSearch)
+export const requestUsers = (currentPage: number, sizePage: number, search: string = '', type: string = 'all'): ThunkCreatorType => async (dispatch) => {
+    dispatch(actionsUser.triggerLoadingUsers(true))
+    const data = await userApi.getUsers(currentPage, sizePage, search, type)
     dispatch(actionsUser.setUsers(data.items))
     dispatch(actionsUser.setTotalUsers(data.totalCount))
-    dispatch(actionsUser.triggerLoading(false))
+    dispatch(actionsUser.triggerLoadingUsers(false))
 }
 
 export const setFollow = (id: number, users: Array<any>): ThunkCreatorType => async (dispatch) => {
@@ -30,14 +30,22 @@ export const setFollow = (id: number, users: Array<any>): ThunkCreatorType => as
     }
 }
 
-export const editCurrencyPage = (page: number): ThunkCreatorType => (dispatch) => {
+export const setCurrencyPage = (page: number): ThunkCreatorType => (dispatch) => {
     dispatch(actionsUser.setCurrencyPage(page))
 }
 
-export const editSizePage = (size: number): ThunkCreatorType => (dispatch) => {
+export const setSizePage = (size: number): ThunkCreatorType => (dispatch) => {
     dispatch(actionsUser.setSizePage(size))
 }
 
-export const setSearchUser = (search: string, type: string): ThunkCreatorType => (dispatch) => {
-    dispatch(actionsUser.setSearchUser(search, type))
+export const setSearchUser = (search: string): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsUser.setSearchStringUser(search))
+}
+
+export const setSearchTypeUser = (type: 'all' | 'follow' | 'other'): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsUser.setSearchTypeUser(type))
+}
+
+export const setViewItem = (view: 'module' | 'list'): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsUser.setViewItem(view))
 }

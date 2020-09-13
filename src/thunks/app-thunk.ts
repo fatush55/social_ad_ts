@@ -35,3 +35,7 @@ export const setHiddenAlert = (action: HiddenAlertType): ThunkCreatorType =>(dis
 export const setTheme = (theme: boolean): ThunkCreatorType => (dispatch) => {
     dispatch(actionsApp.setTheme(theme))
 }
+
+export const setDrawerMode = (mode: boolean): ThunkCreatorType => (dispatch) => {
+    dispatch(actionsApp.setDrawerMode(mode))
+}
