@@ -1,8 +1,8 @@
 // Root
 import React, {FC} from "react"
-// Mat Components
+// Materialize Components
 import {Badge, IconButton, Menu, MenuItem} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {AccountCircleTwoTone, EmailTwoTone} from '@material-ui/icons'
 
 

@@ -2,10 +2,13 @@
 import React, {FC, memo} from "react"
 import {NavLink} from "react-router-dom"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
-// Mat Components
+import clsx from "clsx"
+// Materialize Components
 import {ListItem, ListItemIcon, ListItemText} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {PeopleAltTwoTone, RecentActors, SpeakerNotesTwoTone} from '@material-ui/icons'
+import {useSelector} from "react-redux";
+import {getIsAuth} from "../../../selectors/auth-selector";
 
 
 type PropsType = {
@@ -16,12 +19,15 @@ type PropsType = {
 const useStyles = makeStyles((theme: Theme) => createStyles({
     itemLink: {
         textDecoration: 'none',
-        color: theme.palette.primary.contrastText
+        color: theme.palette.primary.contrastText,
     },
     itemLinkAction: {
         '& svg': {
             color: theme.palette.action.active,
         }
+    },
+    disabledLink: {
+        pointerEvents: 'none',
     }
 }))
 
@@ -35,12 +41,15 @@ const selectIcon = (to: string) => {
     }
 }
 
-export const NavbarDrawerLInkItem: FC<PropsType> = memo(({to, title}) => {
+export const NavbarDrawerLinkItem: FC<PropsType> = memo(({to, title}) => {
     const classes = useStyles()
+    const isAuth = useSelector(getIsAuth)
+    const isDisabled = !isAuth && to !== '/users'
+    const linkClasses = clsx({[classes.itemLink]: true, [classes.disabledLink]: isDisabled})
 
     return (
-        <NavLink to={to} className={classes.itemLink} activeClassName={classes.itemLinkAction}>
-            <ListItem button>
+        <NavLink to={to} className={linkClasses} activeClassName={classes.itemLinkAction}>
+            <ListItem button disabled={isDisabled}>
                 <ListItemIcon>
                     {selectIcon(to)}
                 </ListItemIcon>

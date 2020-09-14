@@ -1,13 +1,15 @@
 // Root
 import React, {FC, memo, useEffect, useState} from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-// Mat Components
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
 import {Button, Hidden, Menu, MenuItem, Paper} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {ExpandLess as ExpandLessIcon} from '@material-ui/icons'
-import {useDispatch, useSelector} from "react-redux";
-import {setSizePage} from "../../thunks/user-thunk";
-import {getSearchUsers} from "../../selectors/users-selector";
+// Thunk
+import {setSizePageUser} from "../../thunks/user-thunk"
+// Selector
+import {getSearchUsers} from "../../selectors/users-selector"
 
 
 type PropsType = {}
@@ -37,12 +39,12 @@ export const UsersSizePageMenu: FC<PropsType> = memo(() => {
 
     const handleSizePage = (value: number) => {
         setAnchorEl(null)
-        dispatch(setSizePage(value))
+        dispatch(setSizePageUser(value))
     }
 
     useEffect(() => {
         window.addEventListener('resize', () => {
-            window.screen.width < 768 && dispatch(setSizePage(20))
+            window.screen.width < 768 && dispatch(setSizePageUser(20))
         })
     },[dispatch])
 

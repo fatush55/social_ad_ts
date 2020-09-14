@@ -2,9 +2,10 @@
 import React, {FC} from 'react'
 import {useDispatch, useSelector} from "react-redux"
 import {createStyles, fade, makeStyles, Theme} from '@material-ui/core/styles'
-// Mat components
+import clsx from 'clsx'
+// Materialize components
 import {AppBar, Badge, IconButton, Toolbar, Typography} from '@material-ui/core'
-// Mat icon
+// Materialize icon
 import {
     AccountCircleTwoTone,
     Brightness7TwoTone,
@@ -20,8 +21,6 @@ import {getTheme, getDrawerMode} from "../../selectors/app-selector"
 // Components
 import {NavbarMobileMenu} from "./NavbarMobileMenu"
 import {NavbarMenu} from "./NavbarMenu"
-import clsx from 'clsx'
-// Color
 
 
 type PropsType = {

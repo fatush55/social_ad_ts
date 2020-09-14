@@ -1,8 +1,14 @@
-import React, { useEffect, useCallback } from "react"
+// Root
+import React, {useEffect, useCallback, FC} from "react"
 import { useFormikContext } from "formik"
 import debounce from "lodash.debounce"
 
-export const AutoSubmit = ({debounceMs}: {debounceMs: number}) => {
+
+type PropsType = {
+    debounceMs: number
+}
+
+export const AutoSubmit: FC<PropsType> = ({debounceMs}: {debounceMs: number}) => {
     const formik = useFormikContext()
 
     const debouncedSubmit = useCallback(debounce(formik.submitForm, debounceMs), [

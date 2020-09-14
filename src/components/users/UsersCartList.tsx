@@ -2,16 +2,19 @@
 import React, {FC, memo} from "react"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import clsx from "clsx"
-// Mat Components
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
 import {Button, CircularProgress, Grid, Paper, Typography} from '@material-ui/core'
-// Mat Icon
+import {Skeleton} from "@material-ui/lab"
+// Materialize Icon
 import {FavoriteTwoTone} from '@material-ui/icons'
-import {UsersType} from "../../types/types";
-import {useDispatch, useSelector} from "react-redux";
-import {getDefaultAvatarUsers} from "../../selectors/app-selector";
-import {setFollow} from "../../thunks/user-thunk";
-import {getFollowProgress, getIsLoadingUsers, getUser} from "../../selectors/users-selector";
-import {Skeleton} from "@material-ui/lab";
+// Type
+import {UsersType} from "../../types/types"
+// Thunk
+import {setFollow} from "../../thunks/user-thunk"
+// Selector
+import {getFollowProgress, getIsLoadingUsers, getUser} from "../../selectors/users-selector"
+import {getDefaultAvatarUsers} from "../../selectors/app-selector"
 
 
 type PropsType = {}

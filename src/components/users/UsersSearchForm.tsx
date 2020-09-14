@@ -3,19 +3,25 @@ import React, {FC, memo} from "react"
 import {createStyles, fade, makeStyles, Theme} from '@material-ui/core/styles'
 import {Field, Form, Formik, FormikHelpers} from 'formik'
 import {InputBase} from 'formik-material-ui'
-// Mat Components
+import {useDispatch, useSelector} from "react-redux"
+import * as Yup from 'yup'
+// Materialize Components
 import {CircularProgress, Paper} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {Search as SearchIcon} from '@material-ui/icons'
-import {useDispatch, useSelector} from "react-redux";
-import {getDrawerMode} from "../../selectors/app-selector";
+// Thunk
+import {setSearchUser} from "../../thunks/user-thunk"
+// Selector
+import {getDrawerMode} from "../../selectors/app-selector"
+import {getIsLoadingUsers} from "../../selectors/users-selector"
+// Component
 import {AutoSubmit} from "../formik/AutoSubmit"
-import {setSearchUser} from "../../thunks/user-thunk";
-import {getIsLoadingUsers, getSearchUsers} from "../../selectors/users-selector";
 import {UsersSearchTypeMenu} from "./UsersSearchTypeMenu"
 
 
-type PropsType = {}
+type PropsType = {
+    search: string
+}
 
 type StyleType = {
     drawerMode: boolean
@@ -78,16 +84,20 @@ const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
     },
 }))
 
-export const UsersSearchForm: FC<PropsType> = memo(() => {
+export const UsersSearchForm: FC<PropsType> = memo(({search}) => {
     const dispatch = useDispatch()
     const drawerMode = useSelector(getDrawerMode)
-    const searchUsers = useSelector(getSearchUsers)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
 
     const classes = useStyles({drawerMode})
 
+    const SignupSchema = Yup.object().shape({
+        search: Yup.string()
+            // .required('Required'),
+    })
+
     const initializeValue = {
-        search: searchUsers.string,
+        search: search
     }
 
     const handlerSubmit = (value: ValuesType, action: FormikHelpers<ValuesType>) => {
@@ -96,7 +106,7 @@ export const UsersSearchForm: FC<PropsType> = memo(() => {
     }
 
     return (
-        <Formik initialValues={initializeValue} onSubmit={handlerSubmit}>
+        <Formik initialValues={initializeValue} onSubmit={handlerSubmit} validationSchema={SignupSchema}>
             {(action ) => (
                 <Form>
                     <Paper className={classes.wrapper}>
@@ -107,7 +117,6 @@ export const UsersSearchForm: FC<PropsType> = memo(() => {
                                         ? <CircularProgress size={24} className={classes.searchProgress} />
                                         : <SearchIcon color={'secondary'} fontSize={'large'} />
                                 }
-
                             </div>
 
                             <Field

@@ -1,9 +1,9 @@
 // Root
 import React, {FC, memo, useState} from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-// Mat Components
+// Materialize Components
 import {LinearProgress} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {} from '@material-ui/icons'
 
 

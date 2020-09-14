@@ -1,14 +1,16 @@
 // Root
 import React, {FC, memo, MouseEvent} from "react"
-import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-// Mat Components
+import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
 import {Hidden} from '@material-ui/core'
-// Mat Icon
+import {ToggleButton, ToggleButtonGroup} from "@material-ui/lab"
+// Materialize Icon
 import {ViewList as ViewListIcon, ViewModule as ViewModuleIcon} from '@material-ui/icons'
-import {ToggleButton, ToggleButtonGroup} from "@material-ui/lab";
-import {setViewItem} from "../../thunks/user-thunk";
-import {useDispatch, useSelector} from "react-redux";
-import {getIsViewItem} from "../../selectors/users-selector";
+// Thunk
+import {setViewItem} from "../../thunks/user-thunk"
+// Selector
+import {getIsViewItem} from "../../selectors/users-selector"
 
 
 type PropsType = {}
@@ -18,7 +20,10 @@ type StyleType = {}
 const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
     toggleBtn: {
         float: 'right',
-        marginRight: 50
+        marginRight: 50,
+        [theme.breakpoints.down('md')]: {
+            marginRight: 20,
+        },
     },
     toggleBtnItem : {
         padding: 13

@@ -1,13 +1,16 @@
 // Root
 import React, {FC, memo, MouseEvent, useState} from "react"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
-// Mat Components
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
 import {IconButton, Menu, MenuItem} from '@material-ui/core'
-// Mat Icon
+// Materialize Icon
 import {FilterListTwoTone} from '@material-ui/icons'
-import {useDispatch, useSelector} from "react-redux";
-import {getIsLoadingUsers, getSearchUsers} from "../../selectors/users-selector";
-import {setSearchTypeUser} from "../../thunks/user-thunk";
+// Thunk
+import {setSearchTypeUser} from "../../thunks/user-thunk"
+// Selector
+import {getIsLoadingUsers, getSearchUsers} from "../../selectors/users-selector"
+import {getIsAuth} from "../../selectors/auth-selector";
 
 
 type PropsType = {}
@@ -34,6 +37,7 @@ export const UsersSearchTypeMenu: FC<PropsType> = memo(() => {
     const dispatch = useDispatch()
     const searchUsers = useSelector(getSearchUsers)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
+    const isAuth = useSelector(getIsAuth)
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -45,22 +49,28 @@ export const UsersSearchTypeMenu: FC<PropsType> = memo(() => {
     }
 
     return (
-        <div className={classes.filterIcon}>
-            <IconButton onClick={handleClick} disabled={isLoadingUsers}>
-                <FilterListTwoTone color={'secondary'} fontSize={'large'} />
-            </IconButton>
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                disableAutoFocusItem={true}
-                open={Boolean(anchorEl)}
-                onClose={() => handleClose()}
-            >
-                <MenuItem selected={searchUsers.type === 'all'} onClick={() => handlerSearchType('all')}>All</MenuItem>
-                <MenuItem selected={searchUsers.type === 'follow'} onClick={() => handlerSearchType('follow')}>Fallowing</MenuItem>
-                <MenuItem selected={searchUsers.type === 'other'} onClick={() => handlerSearchType('other')}>Other</MenuItem>
-            </Menu>
-        </div>
+        <>
+            {
+                isAuth && <>
+                    <div className={classes.filterIcon}>
+                        <IconButton onClick={handleClick} disabled={isLoadingUsers}>
+                            <FilterListTwoTone color={'secondary'} fontSize={'large'} />
+                        </IconButton>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={anchorEl}
+                            keepMounted
+                            disableAutoFocusItem={true}
+                            open={Boolean(anchorEl)}
+                            onClose={() => handleClose()}
+                        >
+                            <MenuItem selected={searchUsers.type === 'all'} onClick={() => handlerSearchType('all')}>All</MenuItem>
+                            <MenuItem selected={searchUsers.type === 'follow'} onClick={() => handlerSearchType('follow')}>Fallowing</MenuItem>
+                            <MenuItem selected={searchUsers.type === 'other'} onClick={() => handlerSearchType('other')}>Other</MenuItem>
+                        </Menu>
+                    </div>
+                </>
+            }
+        </>
     )
 })

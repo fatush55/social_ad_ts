@@ -1,16 +1,19 @@
 // Root
 import React, {FC, memo} from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-// Mat Components
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
 import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, CircularProgress} from '@material-ui/core'
-// Mat Icon
-import {FavoriteTwoTone} from '@material-ui/icons'
-import { UsersType } from "../../types/types"
-import {useDispatch, useSelector} from "react-redux";
-import {getFollowProgress, getIsLoadingUsers, getUser} from "../../selectors/users-selector"
-import { setFollow } from "../../thunks/user-thunk"
-import { getDefaultAvatarUsers } from "../../selectors/app-selector"
 import {Skeleton} from "@material-ui/lab"
+// Materialize Icon
+import {FavoriteTwoTone} from '@material-ui/icons'
+// Thunk
+import { setFollow } from "../../thunks/user-thunk"
+// Selector
+import {getFollowProgress, getIsLoadingUsers, getUser} from "../../selectors/users-selector"
+import { getDefaultAvatarUsers } from "../../selectors/app-selector"
+// Type
+import { UsersType } from "../../types/types"
 
 
 type PropsType  = {
@@ -41,6 +44,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
        '&:after': {
            background: `linear-gradient(90deg, transparent, ${theme.palette.secondary.main}, transparent)`
        }
+    },
+    name: {
+        wordBreak: 'break-all',
     }
 }))
 
@@ -73,7 +79,7 @@ export const UsersCartModule: FC<PropsType & UsersType | MockPropsType > = memo(
                                 <Skeleton animation={'wave'} variant={'rect'} height={100}  width={'100%'} className={classes.wave} />
                             </>
                             : <>
-                                <CardMedia
+                                 <CardMedia
                                     className={classes.media}
                                     image={img}
                                     title="Contemplative Reptile"
@@ -91,7 +97,7 @@ export const UsersCartModule: FC<PropsType & UsersType | MockPropsType > = memo(
                                     <Typography gutterBottom variant="h6" component="h6">
                                         {name}
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" component="p" className={classes.name}>
                                         {status ? status : '...'}
                                     </Typography>
                                 </>

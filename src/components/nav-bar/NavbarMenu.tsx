@@ -2,10 +2,8 @@
 import React, {FC} from "react"
 import { NavLink } from "react-router-dom"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-// Mat Components
+// Materialize Components
 import {Menu, MenuItem} from '@material-ui/core'
-// Mat Icon
-import {} from '@material-ui/icons'
 
 
 type PropsType = {

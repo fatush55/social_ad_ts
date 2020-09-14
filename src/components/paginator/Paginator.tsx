@@ -1,13 +1,15 @@
 // Root
 import React, {ChangeEvent, FC, memo} from "react"
 import {createStyles, fade, makeStyles, Theme} from '@material-ui/core/styles'
-// Mat Components
+// Materialize Components
 import {Grid, Paper} from '@material-ui/core'
-import {Pagination} from '@material-ui/lab';
-// Mat Icon
-import {useDispatch, useSelector} from "react-redux";
-import {getSearchUsers} from "../../selectors/users-selector";
-import {setCurrencyPage} from "../../thunks/user-thunk";
+import {Pagination} from '@material-ui/lab'
+// Materialize Icon
+import {useDispatch, useSelector} from "react-redux"
+// Thunk
+import {setCurrencyPageUser} from "../../thunks/user-thunk"
+// Selector
+import {getSearchUsers} from "../../selectors/users-selector"
 
 
 type PropsType = {
@@ -41,7 +43,7 @@ export const Paginator: FC<PropsType> = memo(({countPage}) => {
     const classes = useStyles()
     const searchUsers = useSelector(getSearchUsers)
 
-    const handlerClick = (event: ChangeEvent<unknown>, value: number) => dispatch(setCurrencyPage(value))
+    const handlerClick = (event: ChangeEvent<unknown>, value: number) => dispatch(setCurrencyPageUser(value))
 
     return (
         <div className={classes.root}>

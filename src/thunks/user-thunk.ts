@@ -6,23 +6,29 @@ import { actionsUser } from "../actions/user-action"
 import { RootThunkCreatorType } from "../store"
 import { ResponseResultCodeType } from "../api/api"
 import { ActionReducerType } from "../reducers/user-reducer"
+import { updateFollowingUserProfile } from "./app-thunk"
 
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>
 
 export const requestUsers = (currentPage: number, sizePage: number, search: string = '', type: string = 'all'): ThunkCreatorType => async (dispatch) => {
     dispatch(actionsUser.triggerLoadingUsers(true))
+
     const data = await userApi.getUsers(currentPage, sizePage, search, type)
+
     dispatch(actionsUser.setUsers(data.items))
     dispatch(actionsUser.setTotalUsers(data.totalCount))
     dispatch(actionsUser.triggerLoadingUsers(false))
 }
 
 export const setFollow = (id: number, users: Array<any>): ThunkCreatorType => async (dispatch) => {
-    const type = users.find((elem) => elem.id === id).followed ? 'unFollow' : 'follow'
+    const item = users.find((elem) => elem.id === id)
+    const isFollowing = item.followed ? 'unFollow' : 'follow'
+
+    dispatch(updateFollowingUserProfile(item, item.followed ? 'remove' : 'add'))
 
     dispatch(actionsUser.triggerFollowProgress(id, true))
-    const data = await userApi.setFollowed(type, id)
+    const data = await userApi.setFollowed(isFollowing, id)
 
     if (data.resultCode === ResponseResultCodeType.success) {
         dispatch(actionsUser.fallowUser(id))
@@ -30,11 +36,11 @@ export const setFollow = (id: number, users: Array<any>): ThunkCreatorType => as
     }
 }
 
-export const setCurrencyPage = (page: number): ThunkCreatorType => (dispatch) => {
+export const setCurrencyPageUser = (page: number): ThunkCreatorType => (dispatch) => {
     dispatch(actionsUser.setCurrencyPage(page))
 }
 
-export const setSizePage = (size: number): ThunkCreatorType => (dispatch) => {
+export const setSizePageUser = (size: number): ThunkCreatorType => (dispatch) => {
     dispatch(actionsUser.setSizePage(size))
 }
 

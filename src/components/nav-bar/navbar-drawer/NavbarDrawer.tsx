@@ -2,14 +2,18 @@
 import React, {FC} from "react"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import clsx from "clsx"
-// Mat Components
-import {Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core'
-// Mat Icon
-import {ChevronLeft as ChevronLeftIcon, Inbox as InboxIcon, Mail as MailIcon,} from '@material-ui/icons'
-import {NavbarDrawerLInkItem} from "./NavbarDrawerLInkItem"
-import {useDispatch, useSelector} from "react-redux";
-import {getDrawerMode} from "../../../selectors/app-selector";
-import {setDrawerMode} from "../../../thunks/app-thunk";
+import {useDispatch, useSelector} from "react-redux"
+// Materialize Components
+import {Divider, Drawer, IconButton, List} from '@material-ui/core'
+// Materialize Icon
+import {ChevronLeft as ChevronLeftIcon,} from '@material-ui/icons'
+// Thunk
+import {setDrawerMode} from "../../../thunks/app-thunk"
+// Selector
+import {getDrawerMode} from "../../../selectors/app-selector"
+// Component
+import {NavbarDrawerLinkItem} from "./NavbarDrawerLinkItem"
+import {NavbarDrawerUserItem} from "./NavbarDrawerUserItem"
 
 
 type PropsType = {
@@ -86,17 +90,12 @@ export const NavbarDrawer: FC<PropsType> = (props) => {
             <Divider />
             <List>
                 {
-                    navLinkItems.map(elem => <NavbarDrawerLInkItem key={elem.title}  {...elem}/>)
+                    navLinkItems.map(elem => <NavbarDrawerLinkItem key={elem.title}  {...elem}/>)
                 }
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon color={"secondary"} /> : <MailIcon color={"secondary"} />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <NavbarDrawerUserItem />
             </List>
         </Drawer>
     )
