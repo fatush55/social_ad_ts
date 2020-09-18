@@ -32,6 +32,7 @@ const useStyles = makeStyles( (theme: Theme) => ({
         padding: theme.spacing(3),
         width: '100vw',
         marginTop: 65,
+        zIndex: 0,
     },
 }));
 

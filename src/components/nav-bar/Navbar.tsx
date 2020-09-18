@@ -21,6 +21,7 @@ import {getTheme, getDrawerMode} from "../../selectors/app-selector"
 // Components
 import {NavbarMobileMenu} from "./NavbarMobileMenu"
 import {NavbarMenu} from "./NavbarMenu"
+import {getIsAuth} from "../../selectors/auth-selector";
 
 
 type PropsType = {
@@ -105,6 +106,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
                 duration: theme.transitions.duration.enteringScreen,
             }),
         },
+        MessageBadge: {
+            '& span': {
+                backgroundColor: theme.palette.info.main
+            },
+
+        }
 }))
 
 export const Navbar: FC<PropsType> = (props) => {
@@ -112,6 +119,7 @@ export const Navbar: FC<PropsType> = (props) => {
     const dispatch = useDispatch()
     const theme = useSelector(getTheme)
     const drawerMode = useSelector(getDrawerMode)
+    const isAuth = useSelector(getIsAuth)
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -158,14 +166,16 @@ export const Navbar: FC<PropsType> = (props) => {
                         }
                     </IconButton>
                     <div className={classes.sectionDesktop}>
-                        <IconButton
-                            aria-label="show 4 new mails"
-                            color='secondary'
-                        >
-                            <Badge badgeContent={4} color='error'>
-                                <EmailTwoTone />
-                            </Badge>
-                        </IconButton>
+                        {isAuth && (
+                            <IconButton
+                                aria-label="show 4 new mails"
+                                color='secondary'
+                            >
+                                <Badge badgeContent={4} className={classes.MessageBadge}>
+                                    <EmailTwoTone />
+                                </Badge>
+                            </IconButton>
+                        )}
                         <IconButton
                             edge="end"
                             aria-label="account of current user"

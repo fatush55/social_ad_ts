@@ -8,6 +8,7 @@ import {Avatar, ListItem, ListItemAvatar, ListItemText, Tooltip, Zoom} from "@ma
 import {useSelector} from "react-redux"
 // Selector
 import {getDefaultAvatarUsers, getDrawerMode, getFollowingUsersProfile} from "../../../selectors/app-selector"
+import {getIsAuth} from "../../../selectors/auth-selector";
 
 
 type PropsType = {}
@@ -45,7 +46,7 @@ const MyTooltip  = withStyles((theme: Theme) => ({
 
 const UserItem = (props: ListChildComponentProps) => {
     const classes = useStyles()
-    const { index, style, data } = props
+    const {index, style, data} = props
     const profile = data.users[index]
 
     return (
@@ -73,20 +74,25 @@ export const NavbarDrawerUserItem: FC<PropsType> = memo((props) => {
     const avatar = useSelector(getDefaultAvatarUsers)
     const users = useSelector(getFollowingUsersProfile)
     const drawerMode = useSelector(getDrawerMode)
+    const isAuth = useSelector(getIsAuth)
 
     return (
-        <FixedSizeList
-            className={classes.scroll}
-            height={400}
-            width={'100%'}
-            itemSize={46}
-            itemCount={users.length}
-            useIsScrolling={false}
-            itemData={{defaultAvatar: avatar, users, drawerMode}}
-        >
-            {UserItem}
-        </FixedSizeList>
+        <>
+            {
+                isAuth && (
+                    <FixedSizeList
+                        className={classes.scroll}
+                        height={400}
+                        width={'100%'}
+                        itemSize={46}
+                        itemCount={users.length}
+                        useIsScrolling={false}
+                        itemData={{defaultAvatar: avatar, users, drawerMode}}
+                    >
+                        {UserItem}
+                    </FixedSizeList>
+                )
+            }
+        </>
     )
-
-
 })

@@ -1,7 +1,7 @@
 // Mat Component
 import {createMuiTheme} from "@material-ui/core"
 // Mat Color
-import {cyan, grey, pink, yellow} from '@material-ui/core/colors'
+import {blueGrey, cyan, grey, red, yellow} from '@material-ui/core/colors'
 
 
 export const themeDark = () => createMuiTheme({
@@ -15,16 +15,25 @@ export const themeDark = () => createMuiTheme({
         },
         secondary: {
             main: yellow['500'],
+            dark: yellow['500'],
+            light: yellow['500'],
             contrastText: grey['900'],
         },
         error: {
-            main: pink['900'],
+            main: red['A400'],
             contrastText: yellow['500'],
         },
         action: {
             active: cyan['A200'],
-            hover: cyan['900'],
-
+            hover: blueGrey['900'],
+        },
+        info: {
+            main: cyan['900'],
+        },
+        success: {
+            main: yellow['500'],
+        },
+        background: {
         },
     },
 })

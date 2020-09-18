@@ -8,9 +8,9 @@ import {ToggleButton, ToggleButtonGroup} from "@material-ui/lab"
 // Materialize Icon
 import {ViewList as ViewListIcon, ViewModule as ViewModuleIcon} from '@material-ui/icons'
 // Thunk
-import {setViewItem} from "../../thunks/user-thunk"
+import {setViewItem} from "../../../thunks/user-thunk"
 // Selector
-import {getIsViewItem} from "../../selectors/users-selector"
+import {getIsViewItem} from "../../../selectors/users-selector"
 
 
 type PropsType = {}

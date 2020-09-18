@@ -7,10 +7,10 @@ import {IconButton, Menu, MenuItem} from '@material-ui/core'
 // Materialize Icon
 import {FilterListTwoTone} from '@material-ui/icons'
 // Thunk
-import {setSearchTypeUser} from "../../thunks/user-thunk"
+import {setSearchTypeUser} from "../../../thunks/user-thunk"
 // Selector
-import {getIsLoadingUsers, getSearchUsers} from "../../selectors/users-selector"
-import {getIsAuth} from "../../selectors/auth-selector";
+import {getIsLoadingUsers, getSearchUsers} from "../../../selectors/users-selector"
+import {getIsAuth} from "../../../selectors/auth-selector";
 
 
 type PropsType = {}

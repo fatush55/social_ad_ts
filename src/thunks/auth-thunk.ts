@@ -10,6 +10,7 @@ import {LoginValue} from "../types/auth-reducer-type"
 import {ResponseResultCodeForCaptchaType, ResponseResultCodeType} from "../api/api"
 import {PhotosType} from "../types/types"
 import {ActionReducerType} from "../reducers/auth-reducer"
+import { setFollowingUserProfile } from "./app-thunk"
 
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>
@@ -31,9 +32,11 @@ export const login = ({email, password, rememberMy, captcha}: LoginValue): Thunk
 
     if (data.resultCode === ResponseResultCodeType.success) {
         dispatch(getAuth())
+        dispatch(setFollowingUserProfile())
         dispatch(actionsAuth.setCaptcha(''))
     } else if (data.resultCode === ResponseResultCodeForCaptchaType.isCaptcha) {
         const dataCaptcha = await securityApi.getCaptcha()
+
         dispatch(actionsAuth.setCaptcha(dataCaptcha.url))
         return await data.messages
     } else if (data.resultCode === ResponseResultCodeType.error) {

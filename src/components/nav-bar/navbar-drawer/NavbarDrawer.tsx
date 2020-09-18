@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: drawerWidth,
         flexShrink: 0,
         whiteSpace: 'nowrap',
+        '& > div': {
+            backgroundColor: theme.palette.primary.main,
+        },
     },
     drawerOpen: {
         width: drawerWidth,

@@ -10,12 +10,12 @@ import {CircularProgress, Paper} from '@material-ui/core'
 // Materialize Icon
 import {Search as SearchIcon} from '@material-ui/icons'
 // Thunk
-import {setSearchUser} from "../../thunks/user-thunk"
+import {setSearchUser} from "../../../thunks/user-thunk"
 // Selector
-import {getDrawerMode} from "../../selectors/app-selector"
-import {getIsLoadingUsers} from "../../selectors/users-selector"
+import {getDrawerMode} from "../../../selectors/app-selector"
+import {getIsLoadingUsers} from "../../../selectors/users-selector"
 // Component
-import {AutoSubmit} from "../formik/AutoSubmit"
+import {AutoSubmit} from "../../../components/formik/AutoSubmit"
 import {UsersSearchTypeMenu} from "./UsersSearchTypeMenu"
 
 
@@ -84,17 +84,17 @@ const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
     },
 }))
 
+const SignupSchema = Yup.object().shape({
+    search: Yup.string()
+    // .required('Required'),
+})
+
 export const UsersSearchForm: FC<PropsType> = memo(({search}) => {
     const dispatch = useDispatch()
     const drawerMode = useSelector(getDrawerMode)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
 
     const classes = useStyles({drawerMode})
-
-    const SignupSchema = Yup.object().shape({
-        search: Yup.string()
-            // .required('Required'),
-    })
 
     const initializeValue = {
         search: search

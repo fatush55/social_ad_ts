@@ -7,9 +7,9 @@ import {Button, Hidden, Menu, MenuItem, Paper} from '@material-ui/core'
 // Materialize Icon
 import {ExpandLess as ExpandLessIcon} from '@material-ui/icons'
 // Thunk
-import {setSizePageUser} from "../../thunks/user-thunk"
+import {setSizePageUser} from "../../../thunks/user-thunk"
 // Selector
-import {getSearchUsers} from "../../selectors/users-selector"
+import {getSearchUsers} from "../../../selectors/users-selector"
 
 
 type PropsType = {}

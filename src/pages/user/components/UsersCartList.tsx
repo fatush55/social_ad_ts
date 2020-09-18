@@ -7,14 +7,15 @@ import {useDispatch, useSelector} from "react-redux"
 import {Button, CircularProgress, Grid, Paper, Typography} from '@material-ui/core'
 import {Skeleton} from "@material-ui/lab"
 // Materialize Icon
-import {FavoriteTwoTone} from '@material-ui/icons'
+import {FavoriteTwoTone, FavoriteBorder} from '@material-ui/icons'
 // Type
-import {UsersType} from "../../types/types"
+import {UsersType} from "../../../types/types"
 // Thunk
-import {setFollow} from "../../thunks/user-thunk"
+import {setFollow} from "../../../thunks/user-thunk"
 // Selector
-import {getFollowProgress, getIsLoadingUsers, getUser} from "../../selectors/users-selector"
-import {getDefaultAvatarUsers} from "../../selectors/app-selector"
+import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
+import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
+import {getIsAuth} from "../../../selectors/auth-selector";
 
 
 type PropsType = {}
@@ -34,6 +35,7 @@ type StyleType = {
 const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
     root: {
       height: 100,
+        backgroundColor: theme.palette.primary.main,
     },
     img: props => ({
         width: '100%',
@@ -82,6 +84,7 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
     const followProgress = useSelector(getFollowProgress)
     const users = useSelector(getUser)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
+    const isAuth = useSelector(getIsAuth)
 
     const isDisabled = followProgress.some(elem => elem === id)
 
@@ -89,9 +92,9 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
         ? photos.large
         : defaultAvatarUsers
 
-    const colorIcon = isDisabled
-        ? 'inherit'
-        : followed ? 'error' : 'secondary'
+    // const colorIcon = isDisabled
+    //     ? 'inherit'
+    //     : followed ? 'error' : 'secondary'
 
     const classes = useStyles({img})
     const classesImgSkeleton = clsx({[classes.wave]: true, [classes.waveImg]: isLoadingUsers})
@@ -131,26 +134,35 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
                         }
                     </Grid>
                     <Grid item xs={2} className={classes.loadBtn}>
-                        {
-                            isLoadingUsers
-                                ? <>
-                                    <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
-                                </>
-                                : <>
-                                    <Button
-                                        size="small"
-                                        color='secondary'
-                                        disabled={isDisabled}
-                                        startIcon={<FavoriteTwoTone color={colorIcon} />}
-                                        onClick={handlerFallow}
-                                    >
-                                        <Typography color={"textPrimary"}>
-                                            {followed ? 'unfollow' : 'fallow'}
-                                        </Typography>
-                                        {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
-                                    </Button>
-                                </>
-                        }
+                        <>
+                            {
+                                isAuth && (
+                                    <>
+                                        {
+                                            isLoadingUsers
+                                                ? <>
+                                                    <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
+                                                </>
+                                                : <>
+
+                                                    <Button
+                                                        size="small"
+                                                        color='secondary'
+                                                        disabled={isDisabled}
+                                                        startIcon={isDisabled ? <FavoriteBorder color={'error'} /> : <FavoriteTwoTone color={'error'} />}
+                                                        onClick={handlerFallow}
+                                                    >
+                                                        <Typography color={"textPrimary"}>
+                                                            {followed ? 'unfollow' : 'fallow'}
+                                                        </Typography>
+                                                        {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
+                                                    </Button>
+                                                </>
+                                        }
+                                    </>
+                                )
+                            }
+                        </>
                     </Grid>
                 </Grid>
             </Paper>

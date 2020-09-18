@@ -7,7 +7,7 @@ import {useHistory} from "react-router"
 // Materialize Components
 import {Grid} from '@material-ui/core'
 // Materialize Icon
-import {UsersCartModule} from "../../components/users/UsersCartModule"
+import {UsersCartModule} from "./components/UsersCartModule"
 // Hook
 import {useUrl} from "../../hooks/useUrl"
 // Selector
@@ -23,10 +23,10 @@ import {
 } from "../../thunks/user-thunk"
 // Components
 import {Paginator} from "../../components/paginator/Paginator"
-import {UsersSearchForm} from "../../components/users/UsersSearchForm"
-import {UsersCartList} from "../../components/users/UsersCartList"
-import {UsersToggleViewItem} from "../../components/users/UsersToggleViewItem"
-import {UsersSizePageMenu} from "../../components/users/UsersSizePageMenu"
+import {UsersSearchForm} from "./components/UsersSearchForm"
+import {UsersCartList} from "./components/UsersCartList"
+import {UsersToggleViewItem} from "./components/UsersToggleViewItem"
+import {UsersSizePageMenu} from "./components/UsersSizePageMenu"
 
 
 type PropsType = {}
