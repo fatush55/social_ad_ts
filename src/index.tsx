@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import React from "react"
 import * as serviceWorker from './serviceWorker'
 // Components
-import { App } from "./App"
+import {App} from "./App"
 // Font Roboto
 import 'fontsource-roboto'
 

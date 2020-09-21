@@ -1,17 +1,26 @@
-import { PhotosType } from "./types"
+import {ContactsType, PhotosType} from "./types"
 
 export type LoginValue = {
-    password: string;
-    email: string;
-    rememberMy: boolean;
-    captcha: string;
+    password: string
+    email: string
+    rememberMy: boolean
+    captcha: string
 }
 
-export type AuthDataType = {
+export type MyProfileDataType = {
+    id?: null | number
     email?: null | string
     login?: null | string
-    id?: null | number
-    photos?: null | PhotosType
+    info?: InfoType | null
+    photos?: PhotosType | null
+}
+
+export type InfoType = {
+    lookingForAJob?: boolean | null
+    lookingForAJobDescription: string | null
+    fullName: string | null
+    aboutMe: string | null
+    contacts: ContactsType | null
 }
 
 export type AuthMeType = {

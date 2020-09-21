@@ -1,12 +1,12 @@
 // Api
-import { userApi } from "../api/user-api"
+import {userApi} from "../api/user-api"
 // Action
-import { actionsUser } from "../actions/user-action"
+import {actionsUser} from "../actions/user-action"
 // Type
-import { RootThunkCreatorType } from "../store"
-import { ResponseResultCodeType } from "../api/api"
-import { ActionReducerType } from "../reducers/user-reducer"
-import { updateFollowingUserProfile } from "./app-thunk"
+import {RootThunkCreatorType} from "../store"
+import {ResponseResultCodeType} from "../api/api"
+import {ActionReducerType} from "../reducers/user-reducer"
+import {updateFollowingUserProfile} from "./app-thunk"
 
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>

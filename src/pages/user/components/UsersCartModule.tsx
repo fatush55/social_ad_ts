@@ -1,20 +1,30 @@
 // Root
 import React, {FC, memo} from "react"
-import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
+import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import {useDispatch, useSelector} from "react-redux"
 // Materialize Components
-import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, CircularProgress} from '@material-ui/core'
+import {
+    Button,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    CircularProgress,
+    Grid,
+    Typography
+} from '@material-ui/core'
 import {Skeleton} from "@material-ui/lab"
 // Materialize Icon
 import {FavoriteBorder, FavoriteTwoTone} from '@material-ui/icons'
 // Thunk
-import { setFollow } from "../../../thunks/user-thunk"
+import {setFollow} from "../../../thunks/user-thunk"
 // Selector
 import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
-import { getDefaultAvatarUsers } from "../../../selectors/app-selector"
+import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
+import {getIsAuth} from "../../../selectors/auth-selector"
 // Type
-import { UsersType } from "../../../types/types"
-import {getIsAuth} from "../../../selectors/auth-selector";
+import {UsersType} from "../../../types/types"
 
 
 type PropsType  = {
@@ -74,63 +84,59 @@ export const UsersCartModule: FC<PropsType & UsersType | MockPropsType > = memo(
         <Grid item xs={12} md={2}>
             <Card className={classes.card}>
                 <CardActionArea>
-                    {
-                        isLoadingUsers
-                            ? <>
-                                <Skeleton animation={'wave'} variant={'rect'} height={100}  width={'100%'} className={classes.wave} />
-                            </>
-                            : <>
-                                 <CardMedia
-                                    className={classes.media}
-                                    image={img}
-                                    title="Contemplative Reptile"
-                                />
-                            </>
+                    {isLoadingUsers
+                        ? <>
+                            <Skeleton animation={'wave'} variant={'rect'} height={100}  width={'100%'} className={classes.wave} />
+                        </>
+                        : <>
+                             <CardMedia
+                                className={classes.media}
+                                image={img}
+                                title="Contemplative Reptile"
+                            />
+                        </>
                     }
                     <CardContent>
-                        {
-                            isLoadingUsers
-                                ? <>
-                                    <Skeleton animation={'wave'} height={25} width={'70%'} className={classes.wave} />
-                                    <Skeleton animation={'wave'} width={'100%'} className={classes.wave} />
-                                </>
-                                : <>
-                                    <Typography gutterBottom variant="h6" component="h6">
-                                        {name}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p" className={classes.name}>
-                                        {status ? status : '...'}
-                                    </Typography>
-                                </>
+                        {isLoadingUsers
+                            ? <>
+                                <Skeleton animation={'wave'} height={25} width={'70%'} className={classes.wave} />
+                                <Skeleton animation={'wave'} width={'100%'} className={classes.wave} />
+                            </>
+                            : <>
+                                <Typography gutterBottom variant="h6" component="h6">
+                                    {name}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p" className={classes.name}>
+                                    {status ? status : '...'}
+                                </Typography>
+                            </>
                         }
                     </CardContent>
                 </CardActionArea>
                 <>
-                    {
-                        isAuth && (
-                            <CardActions>
-                                {
-                                    isLoadingUsers
-                                        ? <>
-                                            <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
-                                        </>
-                                        : <>
-                                            <Button
-                                                size="small"
-                                                color='secondary'
-                                                disabled={isDisabled}
-                                                startIcon={followed ? <FavoriteTwoTone color={'error'} /> : <FavoriteBorder color={'disabled'} />}
-                                                onClick={handlerFallow}
-                                            >
-                                                <Typography color={"textPrimary"}>
-                                                    {followed ? 'unfollow' : 'fallow'}
-                                                </Typography>
-                                                {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
-                                            </Button>
-                                        </>
-                                }
-                            </CardActions>
-                        )
+                    {isAuth &&
+                        <CardActions>
+                            {
+                                isLoadingUsers
+                                    ? <>
+                                        <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
+                                    </>
+                                    : <>
+                                        <Button
+                                            size="small"
+                                            color='secondary'
+                                            disabled={isDisabled}
+                                            startIcon={followed ? <FavoriteTwoTone color={'error'} /> : <FavoriteBorder color={'disabled'} />}
+                                            onClick={handlerFallow}
+                                        >
+                                            <Typography color={"textPrimary"}>
+                                                {followed ? 'unfollow' : 'fallow'}
+                                            </Typography>
+                                            {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
+                                        </Button>
+                                    </>
+                            }
+                        </CardActions>
                     }
                 </>
             </Card>

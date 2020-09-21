@@ -1,10 +1,8 @@
 // Root
-import React, {FC, memo, useEffect} from "react"
+import React, {FC, memo, useEffect, useState} from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
 // Materialize Components
 import {Paper, CircularProgress, Typography, Box} from '@material-ui/core'
-// Materialize Icon
-import {} from '@material-ui/icons'
 
 
 type PropsType = {
@@ -26,16 +24,16 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 export const InitializeLoader: FC<PropsType> = memo((props) => {
     const classes = useStyles()
-    const [progress, setProgress] = React.useState(10);
+    const [progress, setProgress] = useState(10)
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+            setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10))
         }, 500);
         return () => {
             clearInterval(timer);
         };
-    }, []);
+    }, [])
 
     return (
         <Paper square className={classes.root}>

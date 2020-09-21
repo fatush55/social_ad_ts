@@ -8,7 +8,7 @@ import {Avatar, ListItem, ListItemAvatar, ListItemText, Tooltip, Zoom} from "@ma
 import {useSelector} from "react-redux"
 // Selector
 import {getDefaultAvatarUsers, getDrawerMode, getFollowingUsersProfile} from "../../../selectors/app-selector"
-import {getIsAuth} from "../../../selectors/auth-selector";
+import {getIsAuth} from "../../../selectors/auth-selector"
 
 
 type PropsType = {}

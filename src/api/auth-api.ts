@@ -1,5 +1,7 @@
-import { AuthMeType } from "../types/auth-reducer-type"
+// Api
 import { instance, ResponseApiType, ResponseResultCodeForCaptchaType } from "./api"
+// Type
+import { AuthMeType } from "../types/auth-reducer-type"
 
 export const authApi = {
     getMe() {

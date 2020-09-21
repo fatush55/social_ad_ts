@@ -1,6 +1,6 @@
 // Root
 import React, {FC, memo, useEffect, useState} from "react"
-import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
+import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import {useDispatch, useSelector} from "react-redux"
 // Materialize Components
 import {Button, Hidden, Menu, MenuItem, Paper} from '@material-ui/core'
@@ -14,9 +14,7 @@ import {getSearchUsers} from "../../../selectors/users-selector"
 
 type PropsType = {}
 
-type StyleType = {}
-
-const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
+const useStyles = makeStyles<Theme>((theme) => createStyles({
     menu: {
         float: 'right',
         marginRight: '25%',

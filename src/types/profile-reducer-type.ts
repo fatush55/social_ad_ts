@@ -1,4 +1,4 @@
-import { ContactsType } from "./types"
+import {ContactsType} from "./types"
 
 
 export type ProfileFormValueType = {

@@ -1,7 +1,7 @@
 // Root
 import {createStore, applyMiddleware, combineReducers, compose, Action} from "redux"
 import reduxThunk, { ThunkAction } from "redux-thunk"
-// Reducer
+// Reducers
 import { profileReducer } from "./reducers/profile-reducer"
 import { dialogReducer } from "./reducers/dialog-reducer"
 import { userReducer } from "./reducers/user-reducer"
@@ -17,11 +17,11 @@ const rootReducer = combineReducers({
 })
 
 type RootReducer = typeof rootReducer
+
 export type RootState = ReturnType<RootReducer>
+
 export type RootThunkCreatorType<A extends Action, P = void> = ThunkAction<P, RootState, undefined, A>
 
-// type PropertiesType<T> = T extends {[key: string]: infer U} ? U : never
-// export type ActionsCreatorType<T extends {[key: string]: (...args: any[]) => any}> = ReturnType<PropertiesType<T>>
 export type ActionsCreatorType<T> = T extends {[key: string]: (...args: any[]) => infer U } ? U : never
 
 // @ts-ignore

@@ -2,11 +2,13 @@
 import React, {FC} from "react"
 import { NavLink } from "react-router-dom"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
+import {useDispatch, useSelector} from "react-redux"
 // Materialize Components
 import {Menu, MenuItem} from '@material-ui/core'
-import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../../thunks/auth-thunk";
-import {getIsAuth} from "../../selectors/auth-selector";
+// Selector
+import {getIsAuth} from "../../selectors/auth-selector"
+// Thunk
+import {logout} from "../../thunks/auth-thunk"
 
 
 type PropsType = {
@@ -36,9 +38,10 @@ export const NavbarMenu: FC<PropsType> = (props) => {
     const isAuth = useSelector(getIsAuth)
 
     const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
+        setAnchorEl(null)
+        handleMobileMenuClose()
     }
+
     const handlerLogout = () => {
         handleMenuClose()
         dispatch(logout())

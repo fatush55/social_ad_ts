@@ -1,8 +1,8 @@
 // Action
-import { actionsProfile } from "../actions/profile-action"
+import {actionsProfile} from "../actions/profile-action"
 // Type
-import { ProfileType, CommentType } from "../types/types"
-import { ActionsCreatorType } from "../store"
+import {CommentType, ProfileType} from "../types/types"
+import {ActionsCreatorType} from "../store"
 
 
 const initialState = {
@@ -71,14 +71,14 @@ export const profileReducer = (state: initialStateType = initialState, action: A
                 ...state,
                 status: action.status,
             }
-        case "PROFILE/UPDATE_PHOTOS":
-            return {
-                ...state,
-                profile: {
-                    ...state.profile,
-                    photos: action.photos,
-                }
-            }
+        // case "PROFILE/UPDATE_PHOTOS":
+        //     return {
+        //         ...state,
+        //         profile: {
+        //             ...state.profile,
+        //             photos: action.photos,
+        //         }
+        //     }
         case "PROFILE/TRIGGER_LOADING":
             return {
                 ...state,

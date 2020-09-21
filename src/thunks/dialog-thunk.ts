@@ -1,8 +1,8 @@
 // Action
-import { actionsDialog } from "../actions/dialog-action"
+import {actionsDialog} from "../actions/dialog-action"
 // Type
-import { RootThunkCreatorType } from "../store"
-import { ActionReducerType }  from "../reducers/dialog-reducer"
+import {RootThunkCreatorType} from "../store"
+import {ActionReducerType} from "../reducers/dialog-reducer"
 
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>

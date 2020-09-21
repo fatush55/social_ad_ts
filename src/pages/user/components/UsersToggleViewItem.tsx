@@ -15,9 +15,7 @@ import {getIsViewItem} from "../../../selectors/users-selector"
 
 type PropsType = {}
 
-type StyleType = {}
-
-const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
+const useStyles = makeStyles<Theme>((theme) => createStyles({
     toggleBtn: {
         float: 'right',
         marginRight: 50,
@@ -27,7 +25,7 @@ const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
     },
     toggleBtnItem : {
         padding: 13
-    }
+    },
 }))
 
 export const UsersToggleViewItem: FC<PropsType> = memo(() => {

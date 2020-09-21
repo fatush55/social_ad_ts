@@ -1,17 +1,16 @@
 // Root
-import React, {FC, memo} from "react"
-import {makeStyles, Theme, createStyles, useTheme} from "@material-ui/core/styles"
+import React, {ChangeEvent, FC, memo, useState} from "react"
+import {createStyles, makeStyles, Theme, useTheme} from "@material-ui/core/styles"
+import clsx from "clsx"
 // Materialize Components
-import {Tab, Tabs, AppBar, Box, Typography} from "@material-ui/core"
+import {AppBar, Box, Tab, Tabs, useMediaQuery} from "@material-ui/core"
 // Materialize Icon
-import {} from "@material-ui/icons"
-import {compose} from "redux"
-import SwipeableViews from 'react-swipeable-views'
+import {AccountCircle} from "@material-ui/icons"
+// Components
+import {MyProfile} from "./components/MyProfile"
 
 
 type PropsType = {}
-
-type StyleType = {}
 
 type TabPanelProps = {
     children?: React.ReactNode;
@@ -20,14 +19,24 @@ type TabPanelProps = {
     value: any;
 }
 
-const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
-    root: {
-        backgroundColor: theme.palette.background.paper,
-        width: 500,
+const useStyles = makeStyles<Theme>((theme) => createStyles({
+    itemRoot: {
+
     },
+    tabsRoot: {
+        backgroundColor: theme.palette.background.paper,
+        width: '100%',
+        // height: 'calc(100vh - 115px)',
+        [theme.breakpoints.up('xs')]: {
+            height: '100%',
+        }
+    },
+    TabMobileMode: {
+        position: 'fixed',
+        width: '70%',
+        marginLeft: '5%',
+    }
 }))
-
-
 
 const TabPanel = (props: TabPanelProps) => {
     const { children, value, index, ...other } = props;
@@ -41,8 +50,8 @@ const TabPanel = (props: TabPanelProps) => {
             {...other}
         >
             {value === index && (
-                <Box p={3}>
-                    <Typography>{children}</Typography>
+                <Box>
+                    {children}
                 </Box>
             )}
         </div>
@@ -56,51 +65,38 @@ const a11yProps = (index: any) => {
     };
 }
 
-const ProfileWrapper: FC<PropsType> = () => {
-    const classes = useStyles();
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
+export const ProfileContainer: FC<PropsType> = memo(() => {
+    const classes = useStyles()
+    const theme = useTheme()
+    const [value, setValue] = useState(0)
+    const isMobile = !useMediaQuery(theme.breakpoints.up('md'))
 
-    const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => setValue(newValue);
-
-    console.log(theme)
-
-    const handleChangeIndex = (index: number) => setValue(index)
+    const handleChange = (event: ChangeEvent<{}>, newValue: number) => setValue(newValue);
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static" color="default">
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    variant="fullWidth"
-                    aria-label="full width tabs example"
-                >
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
-                </Tabs>
-            </AppBar>
-            <SwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                index={value}
-                onChangeIndex={handleChangeIndex}
-            >
+        <div>
+            <div className={classes.tabsRoot}>
+                <AppBar position="static" color="default" className={clsx({[classes.TabMobileMode]: isMobile})}>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor="secondary"
+                        textColor='secondary'
+                        variant="fullWidth"
+                        aria-label="full width tabs example"
+                    >
+                        <Tab label="My Profile" icon={<AccountCircle/>} {...a11yProps(0)} />
+                        <Tab label="Item Two" icon={<AccountCircle/>} {...a11yProps(1)} />
+                    </Tabs>
+                </AppBar>
+
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    Item One
+                    <MyProfile/>
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
                     Item Two
                 </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
-                </TabPanel>
-            </SwipeableViews>
+            </div>
         </div>
     )
-}
-
-export const ProfileContainer = compose(
-)(ProfileWrapper)
+})

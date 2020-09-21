@@ -1,8 +1,8 @@
 // Action
-import { actionsUser } from "../actions/user-action"
+import {actionsUser} from "../actions/user-action"
 // Type
-import { UsersType } from "../types/types"
-import { ActionsCreatorType } from "../store"
+import {UsersType} from "../types/types"
+import {ActionsCreatorType} from "../store"
 
 
 const initialState = {

@@ -3,22 +3,21 @@ import React, {FC, memo} from "react"
 import {makeStyles, Theme, createStyles} from "@material-ui/core/styles"
 import {Redirect} from "react-router"
 import ParticlesBg from "particles-bg"
+import {compose} from "redux"
+import {useSelector} from "react-redux"
 // Materialize Components
 import {Grid, Paper, fade} from "@material-ui/core"
-// Materialize Icon
-import {} from "@material-ui/icons"
-import {compose} from "redux";
-import {withSuspense} from "../../HOC/withSuspense";
-import {LoginForm} from "./components/LoginForm";
-import {useSelector} from "react-redux";
-import {getIsAuth} from "../../selectors/auth-selector";
+// HOC
+import {withSuspense} from "../../HOC/withSuspense"
+// Selector
+import {getIsAuth} from "../../selectors/auth-selector"
+// Components
+import {LoginForm} from "./components/LoginForm"
 
 
 type PropsType = {}
 
-type StyleType = {}
-
-const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
+const useStyles = makeStyles<Theme>((theme) => createStyles({
     root: {
         height: 'calc(100vh - 115px)',
     },
@@ -33,8 +32,6 @@ const useStyles = makeStyles<Theme & StyleType>((theme) => createStyles({
             padding: theme.spacing(3),
         },
     },
-    animateBg:   {
-    }
 }))
 
 export const LoginWrapper: FC<PropsType> = memo(() => {
@@ -65,4 +62,4 @@ const LoginContainer = compose(
     withSuspense
 )(LoginWrapper)
 
-export default LoginContainer;
+export default LoginContainer

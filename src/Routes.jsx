@@ -7,7 +7,7 @@ import {withSuspense} from "./HOC/withSuspense"
 import {ProfileContainer} from "./pages/profile/ProfileContainer"
 import {UserContainer} from "./pages/user/UserContainer"
 
-// Laze PagesContainer";
+// Laze PagesContainer
 const DialogContainer = lazy(() => import("./pages/dialog/DialogContainer"))
 const LoginContainer = lazy(() => import("./pages/login/LoginContainer"))
 

@@ -1,13 +1,13 @@
 // Action
-import { actionsApp } from "../actions/app-action"
+import {actionsApp} from "../actions/app-action"
 // Api
-import { userApi } from "../api/user-api"
+import {userApi} from "../api/user-api"
 // Thunk
-import { getAuth } from "../thunks/auth-thunk"
+import {getAuth} from "../thunks/auth-thunk"
 // Type
-import { RootThunkCreatorType } from "../store"
-import { AlertType, HiddenAlertType } from "../types/app-reducet-type"
-import { ActionReducerType } from "../reducers/app-reducer"
+import {RootThunkCreatorType} from "../store"
+import {AlertType, HiddenAlertType} from "../types/app-reducet-type"
+import {ActionReducerType} from "../reducers/app-reducer"
 import {UsersType} from "../types/types"
 
 

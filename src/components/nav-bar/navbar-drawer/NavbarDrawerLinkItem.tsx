@@ -3,12 +3,13 @@ import React, {FC, memo} from "react"
 import {NavLink} from "react-router-dom"
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles'
 import clsx from "clsx"
+import {useSelector} from "react-redux"
 // Materialize Components
 import {ListItem, ListItemIcon, ListItemText} from '@material-ui/core'
 // Materialize Icon
 import {PeopleAltTwoTone, RecentActors, SpeakerNotesTwoTone} from '@material-ui/icons'
-import {useSelector} from "react-redux";
-import {getIsAuth} from "../../../selectors/auth-selector";
+// Selector
+import {getIsAuth} from "../../../selectors/auth-selector"
 
 
 type PropsType = {

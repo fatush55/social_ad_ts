@@ -25,12 +25,6 @@ const mapStateToProps = (state: RootState): mapStateToPropsType => ({
 export const withAuthRedirect = <P extends {}>(WrapperComponent: ComponentType<P>) => {
     const RedirectComponent: FC<mapStateToPropsType & OwnToPropsType> = (props) => {
         const {isAuth, ...restProps} = props
-        const urlProfile = '/profile/:idUser?'
-        //
-        // if (!isAuth && !(restProps.match.path === urlProfile && restProps.match.params.idUser)) {
-        //     return <Redirect to='/login'/>
-        // }
-
 
         if (!isAuth) {
             return <Redirect to='/login'/>

@@ -1,5 +1,7 @@
-import { PhotosType, ProfileType } from "../types/types"
+// Api
 import { instance, ResponseApiType } from "./api"
+// Type
+import { PhotosType, ProfileType } from "../types/types"
 
 
 export const profileApi = {

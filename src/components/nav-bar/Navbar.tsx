@@ -1,5 +1,5 @@
 // Root
-import React, {FC} from 'react'
+import React, {FC, MouseEvent, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux"
 import {createStyles, fade, makeStyles, Theme} from '@material-ui/core/styles'
 import clsx from 'clsx'
@@ -18,10 +18,10 @@ import {
 import {setDrawerMode, setTheme} from "../../thunks/app-thunk"
 // Selector
 import {getTheme, getDrawerMode} from "../../selectors/app-selector"
+import {getIsAuth} from "../../selectors/auth-selector"
 // Components
 import {NavbarMobileMenu} from "./NavbarMobileMenu"
 import {NavbarMenu} from "./NavbarMenu"
-import {getIsAuth} from "../../selectors/auth-selector";
 
 
 type PropsType = {
@@ -122,14 +122,14 @@ export const Navbar: FC<PropsType> = (props) => {
     const isAuth = useSelector(getIsAuth)
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null)
+    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null)
     const mobileMenuId = 'primary-search-account-menu-mobile'
     const menuId = 'primary-search-account-menu'
 
     const handlerTheme = () => dispatch(setTheme(!theme))
-    const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget)
+    const handleProfileMenuOpen = (event: MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget)
     const handleMobileMenuClose = () => setMobileMoreAnchorEl(null)
-    const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => setMobileMoreAnchorEl(event.currentTarget)
+    const handleMobileMenuOpen = (event: MouseEvent<HTMLElement>) => setMobileMoreAnchorEl(event.currentTarget)
     const handleDrawer = () => dispatch(setDrawerMode(true))
 
     return (

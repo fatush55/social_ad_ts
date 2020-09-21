@@ -1,9 +1,9 @@
 // Action
-import { actionsApp } from "../actions/app-action"
+import {actionsApp} from "../actions/app-action"
 // Type
-import { AlertType, HiddenAlertType } from "../types/app-reducet-type"
-import { ActionsCreatorType } from "../store"
-import {UsersType} from "../types/types";
+import {AlertType, HiddenAlertType} from "../types/app-reducet-type"
+import {ActionsCreatorType} from "../store"
+import {UsersType} from "../types/types"
 
 
 const initialState = {

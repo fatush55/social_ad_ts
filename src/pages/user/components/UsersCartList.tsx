@@ -15,7 +15,7 @@ import {setFollow} from "../../../thunks/user-thunk"
 // Selector
 import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
 import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
-import {getIsAuth} from "../../../selectors/auth-selector";
+import {getIsAuth} from "../../../selectors/auth-selector"
 
 
 type PropsType = {}
@@ -64,7 +64,6 @@ const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
     wave: {
         '&:after': {
             background: `linear-gradient(90deg, transparent, ${theme.palette.secondary.main}, transparent)`,
-
         }
     },
     waveImg: {
@@ -92,10 +91,6 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
         ? photos.large
         : defaultAvatarUsers
 
-    // const colorIcon = isDisabled
-    //     ? 'inherit'
-    //     : followed ? 'error' : 'secondary'
-
     const classes = useStyles({img})
     const classesImgSkeleton = clsx({[classes.wave]: true, [classes.waveImg]: isLoadingUsers})
 
@@ -106,63 +101,55 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
             <Paper elevation={2}>
                 <Grid container className={classes.root} >
                     <Grid item xs={4}>
-                        {
-                            isLoadingUsers
-                                ? <>
-                                    <Skeleton animation={'wave'} variant={'rect'} height={'100%'} width={'100%'} className={classesImgSkeleton} />
-                                </>
-                                : <>
-                                    <Paper className={classes.img} elevation={0} />
-                                </>
+                        {isLoadingUsers
+                            ? <>
+                                <Skeleton animation={'wave'} variant={'rect'} height={'100%'} width={'100%'} className={classesImgSkeleton} />
+                            </>
+                            : <>
+                                <Paper className={classes.img} elevation={0} />
+                            </>
                         }
                     </Grid>
                     <Grid item xs={6} className={classes.item}>
-                        {
-                            isLoadingUsers
-                                ? <>
-                                    <Skeleton animation={'wave'} height={25} width={'70%'} className={classes.wave} />
-                                    <Skeleton animation={'wave'} width={'100%'} className={classes.wave} />
-                                </>
-                                : <>
-                                    <Typography gutterBottom variant="h6" component="h6">
-                                        {name}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        {status ? status : '...'}
-                                    </Typography>
-                                </>
+                        {isLoadingUsers
+                            ? <>
+                                <Skeleton animation={'wave'} height={25} width={'70%'} className={classes.wave} />
+                                <Skeleton animation={'wave'} width={'100%'} className={classes.wave} />
+                            </>
+                            : <>
+                                <Typography gutterBottom variant="h6" component="h6">
+                                    {name}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {status ? status : '...'}
+                                </Typography>
+                            </>
                         }
                     </Grid>
                     <Grid item xs={2} className={classes.loadBtn}>
-                        <>
+                        {isAuth && <>
                             {
-                                isAuth && (
-                                    <>
-                                        {
-                                            isLoadingUsers
-                                                ? <>
-                                                    <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
-                                                </>
-                                                : <>
-
-                                                    <Button
-                                                        size="small"
-                                                        color='secondary'
-                                                        disabled={isDisabled}
-                                                        startIcon={isDisabled ? <FavoriteBorder color={'error'} /> : <FavoriteTwoTone color={'error'} />}
-                                                        onClick={handlerFallow}
-                                                    >
-                                                        <Typography color={"textPrimary"}>
-                                                            {followed ? 'unfollow' : 'fallow'}
-                                                        </Typography>
-                                                        {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
-                                                    </Button>
-                                                </>
-                                        }
+                                isLoadingUsers
+                                    ? <>
+                                        <Skeleton animation={'wave'} height={50}  width={'50%'} className={classes.wave} />
                                     </>
-                                )
+                                    : <>
+
+                                        <Button
+                                            size="small"
+                                            color='secondary'
+                                            disabled={isDisabled}
+                                            startIcon={followed ? <FavoriteTwoTone color={'error'} /> : <FavoriteBorder color={'disabled'} />}
+                                            onClick={handlerFallow}
+                                        >
+                                            <Typography color={"textPrimary"}>
+                                                {followed ? 'unfollow' : 'fallow'}
+                                            </Typography>
+                                            {isDisabled && <CircularProgress size={24} className={classes.buttonProgress} />}
+                                        </Button>
+                                    </>
                             }
-                        </>
+                        </>}
                     </Grid>
                 </Grid>
             </Paper>

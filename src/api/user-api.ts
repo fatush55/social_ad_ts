@@ -1,4 +1,6 @@
+// Api
 import { instance, ResponseItemApiType, ResponseApiType } from "./api"
+// Type
 import  {UsersType } from "../types/types"
 
 

@@ -4,13 +4,13 @@ import {authApi} from "../api/auth-api"
 import {securityApi} from "../api/security-api"
 // Action
 import {actionsAuth} from "../actions/auth-action"
+// Thunk
+import {setFollowingUserProfile} from "./app-thunk"
 // Type
 import {RootThunkCreatorType} from "../store"
 import {LoginValue} from "../types/auth-reducer-type"
 import {ResponseResultCodeForCaptchaType, ResponseResultCodeType} from "../api/api"
-import {PhotosType} from "../types/types"
 import {ActionReducerType} from "../reducers/auth-reducer"
-import { setFollowingUserProfile } from "./app-thunk"
 
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>
@@ -19,10 +19,11 @@ export const getAuth = (): ThunkCreatorType => async (dispatch) => {
     const dataAuth = await authApi.getMe()
 
     if (dataAuth.resultCode === ResponseResultCodeType.success) {
-        dispatch(actionsAuth.setMyProfile(dataAuth.data))
+        const {userId, photos, ...restData} = await profileApi.getProfile(dataAuth.data.id)
+        const profile = { ...dataAuth.data, photos, info: {...restData}}
+
+        dispatch(actionsAuth.setMyProfile(profile))
         dispatch(actionsAuth.triggerIsAuth(true))
-        const dataProfile = await profileApi.getProfile(dataAuth.data.id)
-        dataProfile.photos && dispatch(actionsAuth.setMyPhoto(dataProfile.photos))
     }
     return Promise.all([dataAuth]);
 }
@@ -47,8 +48,4 @@ export const login = ({email, password, rememberMy, captcha}: LoginValue): Thunk
 export const logout = (): ThunkCreatorType => async (dispatch) => {
     const data = await authApi.logout()
     if (data.resultCode === ResponseResultCodeType.success) dispatch(actionsAuth.setLogOut())
-}
-
-export const setMyPhoto = (photos: PhotosType): ThunkCreatorType => (dispatch) => {
-    dispatch(actionsAuth.setMyPhoto(photos))
 }

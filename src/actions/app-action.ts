@@ -1,6 +1,6 @@
 // Type
-import { AlertType } from "../types/app-reducet-type";
-import {UsersType} from "../types/types";
+import { AlertType } from "../types/app-reducet-type"
+import {UsersType} from "../types/types"
 
 
 export const actionsApp = {

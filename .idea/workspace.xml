@@ -20,27 +20,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfcbcc-1d42-4de3-842b-486b35c574b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/login/components/LoginForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/profile/components/ListInfoProfile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/profile/components/MyProfile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HOC/withAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HOC/withAuthRedirect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/app-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/app-action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/auth-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth-action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/auth-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profile-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/security-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/security-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/default-user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/initialize-loader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/like.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/loader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/mini-loader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/navBar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Initialize-Loader/InitializeLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Initialize-Loader/InitializeLoader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/formik/AutoSubmit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/formik/AutoSubmit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item-loder/ItemLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-loder/ItemLoader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav-bar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav-bar/NavbarMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/NavbarMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerLinkItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerLinkItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerUserItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerUserItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersSearchTypeMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchTypeMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersSizePageMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSizePageMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersToggleViewItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dialog/DialogContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dialog/DialogContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/redux-context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useMobile.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/components/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSearchTypeMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchTypeMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSizePageMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSizePageMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/dialog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/dialog-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/user-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selectors/app-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/app-selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selectors/auth-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/auth-selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selectors/dialog-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/dialog-selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selectors/profile-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/profile-selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selectors/users-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/users-selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunks/app-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/app-thunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thunks/auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/auth-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/themes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/themes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunks/dialog-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/dialog-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunks/profile-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/profile-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunks/user-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/user-thunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/auth-reducer-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/auth-reducer-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/profile-reducer-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/profile-reducer-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/handlerState.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +195,16 @@
       <workItem from="1600316655963" duration="11076000" />
       <workItem from="1600368698829" duration="4763000" />
       <workItem from="1600397367067" duration="2739000" />
+      <workItem from="1600406647906" duration="3418000" />
+      <workItem from="1600419476242" duration="330000" />
+      <workItem from="1600423985164" duration="1554000" />
+      <workItem from="1600496065763" duration="3681000" />
+      <workItem from="1600515845464" duration="9444000" />
+      <workItem from="1600578932825" duration="3312000" />
+      <workItem from="1600587624569" duration="19208000" />
+      <workItem from="1600668133240" duration="784000" />
+      <workItem from="1600679576737" duration="3408000" />
+      <workItem from="1600710644370" duration="7289000" />
     </task>
     <servers />
   </component>
@@ -184,49 +232,49 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600400284936" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1600060724976">
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1600579156404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600060724976" />
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1600400138389">
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600579156404" />
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1600713884766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600400138389" />
-    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1600400138389">
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
+    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1600713884766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600400138389" />
-    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1600400138389">
+    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
+    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1600713884766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600400138389" />
-    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1600400138389">
+    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1600713884766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600400138389" />
-    <state x="276" y="56" key="SettingsEditor" timestamp="1600033856379">
+    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
+    <state x="276" y="56" key="SettingsEditor" timestamp="1600425431502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="276" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600033856379" />
-    <state x="584" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600280024091">
+    <state x="276" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600425431502" />
+    <state x="584" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600626500351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="584" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600280024091" />
-    <state x="478" y="135" width="579" height="554" key="find.popup" timestamp="1599419003276">
+    <state x="584" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600626500351" />
+    <state x="478" y="135" width="579" height="566" key="find.popup" timestamp="1600581476279">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="135" width="579" height="554" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599419003276" />
-    <state width="600" height="440" key="javadoc.popup" timestamp="1600113346674">
+    <state x="478" y="135" width="579" height="566" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600581476279" />
+    <state width="600" height="440" key="javadoc.popup" timestamp="1600712400208">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="600" height="440" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1600113346674" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1600372876687">
+    <state width="600" height="440" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1600712400208" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1600626520721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600372876687" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599993282519">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600626520721" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600496846836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599993282519" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600496846836" />
   </component>
 </project>

@@ -4,7 +4,6 @@ import { actionsProfile } from "../actions/profile-action"
 import { profileApi } from "../api/profile-api"
 // Thunk
 import { cycleAlert, setCurrentProfile } from "./app-thunk"
-import { setMyPhoto } from "./auth-thunk"
 // Type
 import { RootThunkCreatorType } from "../store"
 import { ResponseResultCodeType } from "../api/api"
@@ -37,7 +36,6 @@ export const requestUpdatePhotos = (fileData: File): ThunkCreatorType => async (
     if (data.resultCode === ResponseResultCodeType.success) {
         dispatch(cycleAlert({message: 'successful update Avatar', type: 'success'}))
         dispatch(actionsProfile.updatePhotos(data.data.photos))
-        dispatch(setMyPhoto(data.data.photos))
     }
 }
 

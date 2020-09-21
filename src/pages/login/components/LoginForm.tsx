@@ -7,10 +7,10 @@ import {CheckboxWithLabel, TextField,} from "formik-material-ui"
 import {Button, FormControl, Grid, IconButton, InputAdornment, Avatar, Typography, Paper} from "@material-ui/core"
 // Materialize Icon
 import {Visibility, VisibilityOff, Lock} from "@material-ui/icons"
-import * as Yup from "yup";
-import {useDispatch, useSelector} from "react-redux";
+import * as Yup from "yup"
+import {useDispatch, useSelector} from "react-redux"
 import { login } from "../../../thunks/auth-thunk"
-import {getCaptcha} from "../../../selectors/auth-selector";
+import {getCaptcha} from "../../../selectors/auth-selector"
 
 
 type PropsType = {}
@@ -80,7 +80,7 @@ export const LoginForm: FC<PropsType> = memo(() => {
         captcha: '',
     }
 
-    console.log(captcha)
+    const handleClickShowPassword = () => setModePassword(!modePassword)
 
     const handlerSubmit = (value: InitializeValueType, action: FormikHelpers<InitializeValueType>) => {
         const response =  dispatch(login(value))
@@ -88,9 +88,6 @@ export const LoginForm: FC<PropsType> = memo(() => {
         response.then(data => data && action.setErrors({email: 'no valid Email', password: 'no valid Password'}))
         action.setSubmitting(false)
     }
-
-    const handleClickShowPassword = () => setModePassword(!modePassword)
-
 
     return (
         <Formik initialValues={initializeValue} onSubmit={handlerSubmit} validationSchema={SignupSchema}>
@@ -176,11 +173,7 @@ export const LoginForm: FC<PropsType> = memo(() => {
                                 Log In
                             </Button>
                         </Grid>
-
                     </Grid>
-
-
-
                 </Form>
             )}
         </Formik>

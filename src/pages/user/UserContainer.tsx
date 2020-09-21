@@ -89,7 +89,6 @@ export const UserContainer: FC<PropsType> = memo(() => {
     }, [dispatch, searchUsers, handlerUrl, isInitialize, history])
 
     useEffect(() => {
-
         window.addEventListener('resize', () => {
             window.screen.width < 768 && dispatch(setViewItem('module'))
         })
@@ -97,21 +96,19 @@ export const UserContainer: FC<PropsType> = memo(() => {
 
     return (
         <>
-            {
-                !isInitialize && <>
-                    <UsersSearchForm search={searchUsers.string}/>
-                    <UsersToggleViewItem />
-                    <Grid container spacing={4} className={classes.root} justify={ viewItem === 'module' ? 'flex-start' : 'center'}>
-                        {
-                            viewItem === 'module'
-                                ? users.map(elem => <UsersCartModule key={elem.id} {...elem}/>)
-                                : users.map(elem => <UsersCartList key={elem.id} {...elem}/>)
-                        }
-                    </Grid>
-                    <Paginator countPage={countPage} />
-                    <UsersSizePageMenu />
-                </>
-            }
+            {!isInitialize && <>
+                <UsersSearchForm search={searchUsers.string}/>
+                <UsersToggleViewItem />
+                <Grid container spacing={4} className={classes.root} justify={ viewItem === 'module' ? 'flex-start' : 'center'}>
+                    {
+                        viewItem === 'module'
+                            ? users.map(elem => <UsersCartModule key={elem.id} {...elem}/>)
+                            : users.map(elem => <UsersCartList key={elem.id} {...elem}/>)
+                    }
+                </Grid>
+                <Paginator countPage={countPage} />
+                <UsersSizePageMenu />
+            </>}
         </>
     )
 })
