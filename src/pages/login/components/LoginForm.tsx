@@ -59,10 +59,10 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string()
         .required('Required')
         .email('not valid email')
-        .min(7, 'min 7 symbol'),
+        .min(5, 'min 5 symbol'),
     password: Yup.string()
         .required('Required')
-        .min(5, 'min 5 symbol')
+        .min(4, 'min 4 symbol')
         .max(25, 'max 25 symbol')
 })
 

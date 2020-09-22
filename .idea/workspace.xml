@@ -20,66 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfcbcc-1d42-4de3-842b-486b35c574b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/profile/components/ListInfoProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/profile/components/MyProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HOC/withAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HOC/withAuthRedirect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/app-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/app-action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/auth-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth-action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auth-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profile-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/security-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/security-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/user-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/default-user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/initialize-loader.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/loader.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/mini-loader.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/navBar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Initialize-Loader/InitializeLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Initialize-Loader/InitializeLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/formik/AutoSubmit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/formik/AutoSubmit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item-loder/ItemLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-loder/ItemLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/NavbarMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/NavbarMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerLinkItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerLinkItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerUserItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/navbar-drawer/NavbarDrawerUserItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/redux-context.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useMobile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useUrl.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/components/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSearchTypeMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchTypeMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSizePageMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSizePageMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/dialog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/dialog-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/user-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/app-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/app-selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/auth-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/auth-selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/dialog-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/dialog-selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/profile-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/profile-selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/users-selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/users-selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/app-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/app-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/auth-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/auth-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/dialog-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/dialog-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/profile-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/profile-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/user-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/user-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/auth-reducer-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/auth-reducer-type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/profile-reducer-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/profile-reducer-type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/handlerState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +148,10 @@
       <workItem from="1600587624569" duration="19208000" />
       <workItem from="1600668133240" duration="784000" />
       <workItem from="1600679576737" duration="3408000" />
-      <workItem from="1600710644370" duration="7289000" />
+      <workItem from="1600710644370" duration="7651000" />
+      <workItem from="1600743241779" duration="1033000" />
+      <workItem from="1600745016764" duration="599000" />
+      <workItem from="1600752512339" duration="1263000" />
     </task>
     <servers />
   </component>
@@ -236,22 +183,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600579156404" />
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1600713884766">
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1600753701786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
-    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1600713884766">
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600753701786" />
+    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1600753701786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
-    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1600713884766">
+    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600753701786" />
+    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1600753701786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
-    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1600713884766">
+    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600753701786" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1600753701786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600713884766" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600753701786" />
     <state x="276" y="56" key="SettingsEditor" timestamp="1600425431502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

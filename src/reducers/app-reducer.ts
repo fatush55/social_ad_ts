@@ -12,7 +12,7 @@ const initialState = {
     alert: null as null | AlertType,
     hiddenAlert: null as HiddenAlertType,
     theme: true as boolean,
-    drawerMode: true as boolean,
+    drawerMode: false as boolean,
     defaultAvatarUsers: 'https://img.cinemablend.com/filter:scale/quill/7/b/0/f/8/a/7b0f8a4adb090171ee6a3823041db28a3e7b5d49.png?mw=600',
     fallowingUserProfile: [] as Array<UsersType>,
 }
