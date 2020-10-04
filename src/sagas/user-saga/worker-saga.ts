@@ -18,19 +18,17 @@ import {UsersType} from "../../types/types"
 export function* workerSetUsers(): SagaIterator {
     const userSearch: SearchUsersType = yield select(getSearchUsers)
 
-    yield put(actionsUser.triggerLoadingUsers(true))
-
     try {
+        yield put(actionsUser.triggerLoadingUsers(true))
+
         const user = yield call(userApi.getUsers, userSearch)
 
         yield put(actionsUser.setUsers(user.items))
         yield put(actionsUser.setTotalUsers(user.totalCount))
-        yield put(actionsUser.triggerLoadingUsers(false))
-
     } catch (e) {
-        yield put(actionsUser.triggerLoadingUsers(false))
-
         console.log(e)
+    } finally {
+        yield put(actionsUser.triggerLoadingUsers(false))
     }
 }
 
@@ -64,9 +62,9 @@ export function* workerSetFollow({payload}: WorkerFollowType): SagaIterator {
             yield put(actionsApp.setFallowingUserProfile(followingUser))
         }
 
-        yield put(actionsUser.triggerFollowProgress(followProgress.filter(item => item !== id)))
     } catch (e) {
         console.log(e)
+    } finally {
         yield put(actionsUser.triggerFollowProgress(followProgress.filter(item => item !== id)))
     }
 }

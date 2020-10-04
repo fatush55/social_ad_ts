@@ -25,6 +25,8 @@ import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
 import {getIsAuth} from "../../../selectors/auth-selector"
 // Type
 import {UsersType} from "../../../types/types"
+// Style
+import { useStyles } from "./UsersCartModule-style"
 
 
 type PropsType  = {
@@ -38,31 +40,6 @@ type MockPropsType = {
     photos?: null
     status?: string
 }
-
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    card: {
-        backgroundColor: theme.palette.primary.main,
-    },
-    media: {
-        height: 100
-    },
-    buttonProgress: {
-        color: theme.palette.secondary.main,
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginTop: -12,
-        marginLeft: -12,
-    },
-    wave: {
-       '&:after': {
-           background: `linear-gradient(90deg, transparent, ${theme.palette.secondary.main}, transparent)`
-       }
-    },
-    name: {
-        wordBreak: 'break-all',
-    }
-}))
 
 export const UsersCartModule: FC<PropsType & UsersType | MockPropsType > = memo(({id, name, followed, photos, status}) => {
     const classes = useStyles()

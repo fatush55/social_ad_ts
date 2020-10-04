@@ -20,26 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfcbcc-1d42-4de3-842b-486b35c574b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducers/root-reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/root-saga.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/template-saga/makeRequestWitchSpinnerSaga.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/user-saga/watcher-saga.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/user-saga/worker-saga.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/user-type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useEventListener.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useRouter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList-style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule-style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm-style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/user-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/user-action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/user-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile/components/MyProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/components/MyProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/user-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/app-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/app-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunks/user-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunks/user-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/template-saga/makeRequestWitchSpinnerSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/template-saga/makeRequestWitchSpinnerSaga.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/user-saga/worker-saga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/user-saga/worker-saga.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +48,7 @@
         <option value="TypeScript JSX File" />
         <option value="ComponentMaterial" />
         <option value="TypeScript File" />
+        <option value="Hook" />
       </list>
     </option>
   </component>
@@ -186,7 +178,8 @@
       <workItem from="1601576661317" duration="1086000" />
       <workItem from="1601604827911" duration="227000" />
       <workItem from="1601748608992" duration="10204000" />
-      <workItem from="1601784840367" duration="13053000" />
+      <workItem from="1601784840367" duration="15009000" />
+      <workItem from="1601836882455" duration="5079000" />
     </task>
     <servers />
   </component>
@@ -218,22 +211,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601748847180" />
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1601796530938">
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1601800444087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601796530938" />
-    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1601796530937">
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
+    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1601800444087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601796530937" />
-    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1601796530937">
+    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
+    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1601800444087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601796530937" />
-    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1601796530938">
+    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1601800444087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601796530938" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
     <state x="276" y="56" key="SettingsEditor" timestamp="1601748834339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -246,17 +239,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="135" width="579" height="566" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600581476279" />
-    <state width="600" height="440" key="javadoc.popup" timestamp="1601794622119">
+    <state width="600" height="440" key="javadoc.popup" timestamp="1601799326215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="600" height="440" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1601794622119" />
+    <state width="600" height="440" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1601799326215" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1601521618101">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601521618101" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601749374581">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601838115645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601749374581" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601838115645" />
   </component>
 </project>

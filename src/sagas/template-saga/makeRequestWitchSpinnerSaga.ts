@@ -28,13 +28,11 @@ export function* makeRequestWitchSpinnerSaga<T, A>(options: OptionsType<T, A>): 
 
     try {
         yield put(startFetching())
-
         const request = yield call(fetcher, fetcherParam)
-
         yield put(fill(request))
-        yield put(stopFetching())
     } catch (e) {
         yield put(error(e))
+    } finally {
         yield put(stopFetching())
     }
 }
