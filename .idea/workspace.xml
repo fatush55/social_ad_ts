@@ -20,17 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfcbcc-1d42-4de3-842b-486b35c574b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useEventListener.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useRouter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList-style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule-style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm-style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/UserContainer-style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem/useUsersToggleViewItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/useUserContainer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersSearchForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/template-saga/makeRequestWitchSpinnerSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/template-saga/makeRequestWitchSpinnerSaga.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/user-saga/worker-saga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/user-saga/worker-saga.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/UserContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule-style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule/UsersCartModule-style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersCartModule/UsersCartModule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/components/UsersToggleViewItem/UsersToggleViewItem.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +44,8 @@
         <option value="MaterialTypescritComponent" />
         <option value="TypeScript JSX File" />
         <option value="ComponentMaterial" />
-        <option value="TypeScript File" />
         <option value="Hook" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -86,11 +83,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\REACT\soceal_ad_ts\src\pages\user\components\UsersToggleViewItem" />
+      <recent name="D:\REACT\soceal_ad_ts\src\pages\user\components\UsersCartModule" />
       <recent name="D:\REACT\soceal_ad_ts\src\pages\user\components" />
       <recent name="D:\REACT\soceal_ad_ts\src\components\formik" />
       <recent name="D:\REACT\soceal_ad_ts\src\components\nav-bar" />
-      <recent name="D:\REACT\soceal_ad_ts\src\components\users" />
-      <recent name="D:\REACT\soceal_ad_ts\src\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -179,7 +176,7 @@
       <workItem from="1601604827911" duration="227000" />
       <workItem from="1601748608992" duration="10204000" />
       <workItem from="1601784840367" duration="15009000" />
-      <workItem from="1601836882455" duration="5079000" />
+      <workItem from="1601836882455" duration="6687000" />
     </task>
     <servers />
   </component>
@@ -203,34 +200,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="179" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600026886479" />
-    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600400284936">
+    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601843845443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600400284936" />
+    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601843845443" />
     <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1601748847180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601748847180" />
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1601800444087">
+    <state width="1515" height="209" key="GridCell.Tab.0.bottom" timestamp="1601842857808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
-    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1601800444087">
+    <state width="1515" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601842857808" />
+    <state width="1515" height="209" key="GridCell.Tab.0.center" timestamp="1601842857808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
-    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1601800444087">
+    <state width="1515" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601842857808" />
+    <state width="1515" height="209" key="GridCell.Tab.0.left" timestamp="1601842857808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
-    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1601800444087">
+    <state width="1515" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601842857808" />
+    <state width="1515" height="209" key="GridCell.Tab.0.right" timestamp="1601842857808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601800444087" />
-    <state x="276" y="56" key="SettingsEditor" timestamp="1601748834339">
+    <state width="1515" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601842857808" />
+    <state x="276" y="56" key="SettingsEditor" timestamp="1601843227579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="276" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601748834339" />
+    <state x="276" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601843227579" />
     <state x="584" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601604948284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

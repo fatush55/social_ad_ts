@@ -18,13 +18,13 @@ import {Skeleton} from "@material-ui/lab"
 // Materialize Icon
 import {FavoriteBorder, FavoriteTwoTone} from '@material-ui/icons'
 // Action
-import {actionsUser} from "../../../actions/user-action"
+import {actionsUser} from "../../../../actions/user-action"
 // Selector
-import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
-import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
-import {getIsAuth} from "../../../selectors/auth-selector"
+import {getFollowProgress, getIsLoadingUsers} from "../../../../selectors/users-selector"
+import {getDefaultAvatarUsers} from "../../../../selectors/app-selector"
+import {getIsAuth} from "../../../../selectors/auth-selector"
 // Type
-import {UsersType} from "../../../types/types"
+import {UsersType} from "../../../../types/types"
 // Style
 import { useStyles } from "./UsersCartModule-style"
 
