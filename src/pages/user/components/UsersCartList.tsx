@@ -10,15 +10,17 @@ import {Skeleton} from "@material-ui/lab"
 import {FavoriteTwoTone, FavoriteBorder} from '@material-ui/icons'
 // Type
 import {UsersType} from "../../../types/types"
-// Thunk
-import {setFollow} from "../../../thunks/user-thunk"
+// Action
+import {actionsUser} from '../../../actions/user-action'
 // Selector
 import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
 import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
 import {getIsAuth} from "../../../selectors/auth-selector"
 
 
-type PropsType = {}
+type PropsType = {
+    children?: never
+}
 
 type MockPropsType = {
     id: number
@@ -81,20 +83,17 @@ export const UsersCartList: FC<PropsType & UsersType | MockPropsType> = memo(({i
     const defaultAvatarUsers = useSelector(getDefaultAvatarUsers)
     const dispatch = useDispatch()
     const followProgress = useSelector(getFollowProgress)
-    const users = useSelector(getUser)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
     const isAuth = useSelector(getIsAuth)
 
-    const isDisabled = followProgress.some(elem => elem === id)
+    const isDisabled = followProgress.some((elem: number) => elem === id)
 
-    const img = photos && photos.large
-        ? photos.large
-        : defaultAvatarUsers
+    const img = photos && photos.large ? photos.large : defaultAvatarUsers
 
     const classes = useStyles({img})
     const classesImgSkeleton = clsx({[classes.wave]: true, [classes.waveImg]: isLoadingUsers})
 
-    const handlerFallow = () => dispatch((setFollow(id, users)))
+    const handlerFallow = () => dispatch(actionsUser.watchSetFollow(id))
 
     return (
         <Grid item lg={8}  xs={12}>

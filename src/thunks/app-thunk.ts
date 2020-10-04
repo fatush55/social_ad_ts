@@ -22,7 +22,7 @@ export const setInitialize = (): ThunkCreatorType => async (dispatch) => {
 }
 
 export const setFollowingUserProfile = (): ThunkCreatorType => async (dispatch) => {
-    const data = await userApi.getUsers(1, 20, '', 'follow')
+    const data = await userApi.getUsers({type: 'follow'})
 
     dispatch(actionsApp.setFallowingUserProfile(data.items))
 }

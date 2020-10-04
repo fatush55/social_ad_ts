@@ -11,10 +11,17 @@ import {updateFollowingUserProfile} from "./app-thunk"
 
 type ThunkCreatorType = RootThunkCreatorType<ActionReducerType>
 
-export const requestUsers = (currentPage: number, sizePage: number, search: string = '', type: string = 'all'): ThunkCreatorType => async (dispatch) => {
+type RequestUsersType = {
+    currentPage: number
+    sizePage: number
+    search: string
+    type: 'all' | 'follow' | 'other'
+}
+
+export const requestUsers = (action: RequestUsersType): ThunkCreatorType => async (dispatch) => {
     dispatch(actionsUser.triggerLoadingUsers(true))
 
-    const data = await userApi.getUsers(currentPage, sizePage, search, type)
+    const data = await userApi.getUsers(action)
 
     dispatch(actionsUser.setUsers(data.items))
     dispatch(actionsUser.setTotalUsers(data.totalCount))
@@ -27,12 +34,12 @@ export const setFollow = (id: number, users: Array<any>): ThunkCreatorType => as
 
     dispatch(updateFollowingUserProfile(item, item.followed ? 'remove' : 'add'))
 
-    dispatch(actionsUser.triggerFollowProgress(id, true))
+    // dispatch(actionsUser.triggerFollowProgress(id, true))
     const data = await userApi.setFollowed(isFollowing, id)
 
     if (data.resultCode === ResponseResultCodeType.success) {
         dispatch(actionsUser.fallowUser(id))
-        dispatch(actionsUser.triggerFollowProgress(id, false))
+        // dispatch(actionsUser.triggerFollowProgress(id, false))
     }
 }
 

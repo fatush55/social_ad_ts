@@ -1,5 +1,5 @@
 // Root
-import React, {FC, memo} from "react"
+import React, {FC, memo, useEffect, useRef} from "react"
 import {createStyles, fade, makeStyles, Theme} from '@material-ui/core/styles'
 import {Field, Form, Formik, FormikHelpers} from 'formik'
 import {InputBase} from 'formik-material-ui'
@@ -93,17 +93,22 @@ export const UsersSearchForm: FC<PropsType> = memo(({search}) => {
     const dispatch = useDispatch()
     const drawerMode = useSelector(getDrawerMode)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
-
     const classes = useStyles({drawerMode})
 
+    const refSearch = useRef<HTMLInputElement>(null)
+
     const initializeValue = {
-        search: search
+        search: search ? search : '',
     }
 
     const handlerSubmit = (value: ValuesType, action: FormikHelpers<ValuesType>) => {
         dispatch(setSearchUser(value.search))
         action.setSubmitting(false)
     }
+
+    useEffect(() => {
+        refSearch && refSearch.current && !isLoadingUsers && refSearch.current.focus()
+    }, [refSearch, isLoadingUsers])
 
     return (
         <Formik initialValues={initializeValue} onSubmit={handlerSubmit} validationSchema={SignupSchema}>
@@ -120,6 +125,7 @@ export const UsersSearchForm: FC<PropsType> = memo(({search}) => {
                             </div>
 
                             <Field
+                                inputRef={refSearch}
                                 placeholder="Search…"
                                 component={InputBase}
                                 name="search"
@@ -130,7 +136,6 @@ export const UsersSearchForm: FC<PropsType> = memo(({search}) => {
                                 }}
                                 inputProps={{ 'aria-label': 'search' }}
                                 disabled={isLoadingUsers}
-                                autoFocus={true}
                             />
 
                             <UsersSearchTypeMenu />

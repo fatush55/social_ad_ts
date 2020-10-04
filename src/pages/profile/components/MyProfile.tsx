@@ -5,9 +5,26 @@ import clsx from "clsx"
 import {animated, useSpring} from "react-spring"
 import {useSelector} from "react-redux"
 // Materialize Components
-import {Button, Grid, Paper, Typography, useMediaQuery} from "@material-ui/core"
+import {
+    Button,
+    Grid,
+    IconButton,
+    List,
+    ListItem,
+    ListItemSecondaryAction,
+    ListItemText,
+    Paper,
+    Typography,
+    useMediaQuery
+} from "@material-ui/core"
 // Materialize Icon
-import {AccountCircleTwoTone, ListAltTwoTone, SpeakerNotesOffTwoTone, SpeakerNotesTwoTone} from "@material-ui/icons"
+import {
+    AccountCircleTwoTone,
+    EditTwoTone,
+    ListAltTwoTone,
+    SpeakerNotesOffTwoTone,
+    SpeakerNotesTwoTone
+} from "@material-ui/icons"
 // Selector
 import {getMyProfile} from "../../../selectors/auth-selector"
 import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
@@ -28,8 +45,8 @@ const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
     itemWrapper: {
         padding: theme.spacing(2),
         overflow: 'hidden',
-        marginTop: 20,
-        height: 'calc(100vh - 237px)'
+        marginTop: 5,
+        height: 'calc(100vh - 222px)'
     },
     stick: {
         borderRight: `2px solid ${fade(theme.palette.secondary.main, .3)}`,
@@ -50,15 +67,22 @@ const useStyles = makeStyles<Theme, StyleType>((theme) => createStyles({
         zIndex: 99,
     },
     button: {
-        margin: theme.spacing(1),
         width: '90%',
+        margin: `${theme.spacing(1)}px 0`
     },
     wrapperButton: {
-        width: '100%',
-        marginLeft: '5%',
+        width: '90%',
+        '& > span': {
+            width: '100%'
+        },
     },
     input: {
         display: 'none',
+    },
+    demo: {
+        backgroundColor: fade(theme.palette.secondary.main, .15),
+        margin: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+        borderRadius: 4,
     },
 }))
 
@@ -109,13 +133,30 @@ export const MyProfile: FC<PropsType> = memo(() => {
     const handlerColumnMode = () => setColumnAnim(!columnAnim)
 
     return (<>{profile && (
-        <Grid container className={classes.rootWrapper}>
+        <Grid container>
             <Grid item md={4} xs={12} container className={clsx(classes.itemWrapper, {[classes.stick]: isMobile})}    >
                 <Grid  item xs={12}>
                     <Typography color={'secondary'} variant={"h4"} align={'center'}>
                         {profile.info && profile.info.fullName ? profile.info.fullName : '?????'}
                     </Typography>
                     <Paper className={classes.avatar}  elevation={3} />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <div className={classes.demo}>
+                        <List dense={true}>
+                            <ListItem>
+                                <ListItemText
+                                    primary="Single-line item"
+                                />
+                                <ListItemSecondaryAction>
+                                    <IconButton edge="end" aria-label="delete">
+                                        <EditTwoTone/>
+                                    </IconButton>
+                                </ListItemSecondaryAction>
+                            </ListItem>
+                        </List>
+                    </div>
                 </Grid>
 
                 <Grid item xs={12} container direction={'column'} alignItems={'center'}>
@@ -142,7 +183,7 @@ export const MyProfile: FC<PropsType> = memo(() => {
                             color="secondary"
                             className={classes.button}
                             component="span"
-                            startIcon={ <AccountCircleTwoTone/>}
+                            startIcon={<AccountCircleTwoTone/>}
                         >
                             Update Avatar
                         </Button>
@@ -159,26 +200,30 @@ export const MyProfile: FC<PropsType> = memo(() => {
                     </Button>
                 </Grid>
             </Grid>
-            {profile.info && <>
-                {isMobile
-                    ? (
-                        <animated.div
-                            style={propsInfoWrapperAnim}
-                            className={clsx(classes.itemWrapper, {[classes.stick]: isMobile})}
-                        >
-                            <animated.div style={propsInfoAnim}>
-                                <ListInfoProfile info={profile.info} />
+
+            {profile.info && // Info from profile column
+                <>
+                    {isMobile
+                        ? (
+                            <animated.div
+                                style={propsInfoWrapperAnim}
+                                className={clsx(classes.itemWrapper, {[classes.stick]: isMobile})}
+                            >
+                                <animated.div style={propsInfoAnim}>
+                                    <ListInfoProfile info={profile.info} />
+                                </animated.div>
                             </animated.div>
-                        </animated.div>
-                    )
-                    : (
-                        <Grid item xs={12} className={clsx(classes.itemWrapper)}>
-                            {/*<ListInfoProfile info={profile.info} />*/}
-                        </Grid>
-                    )
-                }
-            </>}
-            {isMobile
+                        )
+                        : (
+                            <Grid item xs={12} className={clsx(classes.itemWrapper)}>
+                                {/*<ListInfoProfile info={profile.info} />*/}
+                            </Grid>
+                        )
+                    }
+                </>
+            }
+
+            {isMobile // Posts column
                 ? (
                     <animated.div style={propsResponseItem} className={classes.itemWrapper}>
                         Posts

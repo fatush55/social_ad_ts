@@ -14,13 +14,14 @@ import {useUrl} from "../../hooks/useUrl"
 import {getIsViewItem, getSearchUsers, getTotalUsers, getUser} from "../../selectors/users-selector"
 // Thunk
 import {
-    requestUsers,
     setCurrencyPageUser,
     setSearchTypeUser,
     setSearchUser,
     setSizePageUser,
     setViewItem
 } from "../../thunks/user-thunk"
+// Action Saga
+import {actionsUser} from '../../actions/user-action'
 // Components
 import {Paginator} from "../../components/paginator/Paginator"
 import {UsersSearchForm} from "./components/UsersSearchForm"
@@ -54,11 +55,11 @@ export const UserContainer: FC<PropsType> = memo(() => {
     const users = useSelector(getUser)
     const viewItem = useSelector(getIsViewItem)
     const searchUsers = useSelector(getSearchUsers)
-
+    
     const [, handlerUrl] = useUrl([
         {title: 'page', value: searchUsers.currentPage !== 1 && searchUsers.currentPage},
         {title: 'size', value: searchUsers.sizePage !== 20 && searchUsers.sizePage},
-        {title: 'search', value: searchUsers.string },
+        {title: 'search', value: searchUsers.search },
         {title: 'type', value: searchUsers.type !== 'all' && searchUsers.type},
     ])
 
@@ -83,7 +84,7 @@ export const UserContainer: FC<PropsType> = memo(() => {
             setIsInitialize(false)
         } else {
             handlerUrl()
-            dispatch(requestUsers(searchUsers.currentPage, searchUsers.sizePage, searchUsers.string, searchUsers.type))
+            dispatch(actionsUser.watchSetUser())
         }
 
     }, [dispatch, searchUsers, handlerUrl, isInitialize, history])
@@ -97,7 +98,7 @@ export const UserContainer: FC<PropsType> = memo(() => {
     return (
         <>
             {!isInitialize && <>
-                <UsersSearchForm search={searchUsers.string}/>
+                <UsersSearchForm search={searchUsers.search}/>
                 <UsersToggleViewItem />
                 <Grid container spacing={4} className={classes.root} justify={ viewItem === 'module' ? 'flex-start' : 'center'}>
                     {

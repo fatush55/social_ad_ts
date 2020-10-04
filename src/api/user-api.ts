@@ -5,7 +5,8 @@ import  {UsersType } from "../types/types"
 
 
 export const userApi = {
-    getUsers(currentPage = 1, sizePage = 20, search = '', type = 'all') {
+    getUsers({currentPage = 1, sizePage = 20, search = '', type = 'all' as 'all' | 'follow' | 'other'}) {
+        console.log(search)
         const query = search.length ? `&term=${search}` : ''
         const typeQuery = type === 'all' ? '' : type === 'follow' ? `&friend=${true}` : `&friend=${false}`
 

@@ -17,8 +17,8 @@ import {
 import {Skeleton} from "@material-ui/lab"
 // Materialize Icon
 import {FavoriteBorder, FavoriteTwoTone} from '@material-ui/icons'
-// Thunk
-import {setFollow} from "../../../thunks/user-thunk"
+// Action
+import {actionsUser} from "../../../actions/user-action"
 // Selector
 import {getFollowProgress, getIsLoadingUsers, getUser} from "../../../selectors/users-selector"
 import {getDefaultAvatarUsers} from "../../../selectors/app-selector"
@@ -68,17 +68,14 @@ export const UsersCartModule: FC<PropsType & UsersType | MockPropsType > = memo(
     const classes = useStyles()
     const dispatch = useDispatch()
     const followProgress = useSelector(getFollowProgress)
-    const users = useSelector(getUser)
     const isLoadingUsers = useSelector(getIsLoadingUsers)
     const defaultAvatarUsers = useSelector(getDefaultAvatarUsers)
     const isAuth = useSelector(getIsAuth)
 
-    const isDisabled = followProgress.some(elem => elem === id)
-    const img = photos && photos.large
-        ? photos.large
-        : defaultAvatarUsers
+    const isDisabled = followProgress.some((elem: number) => elem === id)
+    const img = photos && photos.large ? photos.large : defaultAvatarUsers
 
-    const handlerFallow = () => dispatch((setFollow(id, users)))
+    const handlerFallow = () => dispatch(actionsUser.watchSetFollow(id))
 
     return (
         <Grid item xs={12} md={2}>
