@@ -34,7 +34,7 @@ const useStyles = makeStyles( (theme: Theme) => ({
 }));
 
 
-const AppContainer: FC = (props) => {
+const AppContainer: FC = (props,) => {
     const dark = themeDark()
     const light = themeLight()
     const classes = useStyles()
